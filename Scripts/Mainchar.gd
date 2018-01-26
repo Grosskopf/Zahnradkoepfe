@@ -19,15 +19,19 @@ func _process(delta):
 		if(Input.is_action_pressed("walkup")):
 			print("up")
 			movement+=Vector2(-32,-24)
+			$Sprite.region_rect=Rect2(0,0,64,128)
 		if(Input.is_action_pressed("walkdown")):
 			print("down")
 			movement+=Vector2(32,24)
+			$Sprite.region_rect=Rect2(192,0,64,128)
 		if(Input.is_action_pressed("walkright")):
 			print("right")
 			movement+=Vector2(32,-24)
+			$Sprite.region_rect=Rect2(128,0,64,128)
 		if(Input.is_action_pressed("walkleft")):
 			print("left")
 			movement+=Vector2(-32,24)
+			$Sprite.region_rect=Rect2(64,0,64,128)
 		movement*=delta*5
 		rpc_unreliable("movement_added",movement)
 		#move_and_collide(movement)

@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/Mainchar.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Vorlage/PlaceholderPlayer.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Vorlage/PlayerAllSides.png" type="Texture" id=2]
 
-[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
+[node name="KinematicBody2D" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -16,7 +16,9 @@ _sections_unfolded = [ "Collision", "Material", "Pause", "Transform", "Visibilit
 
 texture = ExtResource( 2 )
 offset = Vector2( 0, -16 )
-_sections_unfolded = [ "Offset" ]
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 128 )
+_sections_unfolded = [ "Offset", "Region" ]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
 

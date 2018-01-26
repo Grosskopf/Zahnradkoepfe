@@ -7,10 +7,10 @@ path="res://.import/PlayerRechtsVorne.png-0b4564570a5599b33c278820fa6e7c1d.stex"
 [deps]
 
 source_file="res://Assets/Vorlage/PlayerRechtsVorne.png"
-source_md5="d27c66884c98582e8342f76bbf82ec19"
+source_md5="b47142264fe692a0147078e920924ea2"
 
 dest_files=[ "res://.import/PlayerRechtsVorne.png-0b4564570a5599b33c278820fa6e7c1d.stex" ]
-dest_md5="6287733ae6e9f88f757f6511501873e7"
+dest_md5="e5371174e78a3a772c1242429b0e5e82"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -28,5 +28,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
