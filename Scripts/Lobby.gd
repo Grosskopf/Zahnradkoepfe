@@ -80,7 +80,7 @@ func _on_Host_pressed():
 
 func _on_Join_pressed():
 	
-	var ip = get_node("Panel/address").get_text()
+	var ip = get_node("Panel/adress").get_text()
 	if (not ip.is_valid_ip_address()):
 		_set_status("IP address is invalid",false)
 		return
