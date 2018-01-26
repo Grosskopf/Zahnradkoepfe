@@ -10,7 +10,7 @@ source_file="res://Assets/Vorlage/Boden_MetallZerkratzt.png"
 source_md5="ae666c1a4168701d84a16b393e512a8d"
 
 dest_files=[ "res://.import/Boden_MetallZerkratzt.png-85f10cb03a1c4e09d5309af68c113664.stex" ]
-dest_md5="c2d7f07a500077faeee1732ae1d859da"
+dest_md5="ca0b06f55bf3eace8c424772fc77a0e0"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -28,5 +28,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

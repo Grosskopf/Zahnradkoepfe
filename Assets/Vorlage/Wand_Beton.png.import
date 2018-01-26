@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/Wand_Beton.png-44f9e370af85441cde3230d567210884.stex"
 
 [deps]
 
-source_file="res://icon.png"
-source_md5="ae7e641067601e2184afcade49abd283"
+source_file="res://Assets/Vorlage/Wand_Beton.png"
+source_md5="2b571a97966f8d67cadb5cf8d4ce17e0"
 
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
-dest_md5="e98d9bb7134bfbd85e4454221ef47204"
+dest_files=[ "res://.import/Wand_Beton.png-44f9e370af85441cde3230d567210884.stex" ]
+dest_md5="a02ad14c13c3a896cf93f9acc8ac0982"
 
 [params]
 

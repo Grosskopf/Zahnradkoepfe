@@ -10,7 +10,7 @@ source_file="res://Assets/Vorlage/Boden_Erde.png"
 source_md5="fcca5124f2e69ba8a31077eea67c65c8"
 
 dest_files=[ "res://.import/Boden_Erde.png-48ad498295367ddb274f47d03dff4c01.stex" ]
-dest_md5="7c3e685b60c768163ba7dde00ac00884"
+dest_md5="5183b54a93d6547e0f58909e11aa2368"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -28,5 +28,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
