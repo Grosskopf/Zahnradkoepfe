@@ -9,6 +9,8 @@ func _ready():
 	# Initialization here
 	set_process(true)
 	pass
+func movement_added(movement):
+	move_and_collide(movement)
 
 func _process(delta):
 	if (is_network_master()):
@@ -27,7 +29,7 @@ func _process(delta):
 			print("left")
 			movement+=Vector2(-32,24)
 		movement*=delta*5
-		rpc_unreliable("move_and_collide",movement)
+		rpc_unreliable("movement_added",movement)
 		#move_and_collide(movement)
 	#move_and_slide(movement)
 	
