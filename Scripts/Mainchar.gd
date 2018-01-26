@@ -27,7 +27,8 @@ func _process(delta):
 			print("left")
 			movement+=Vector2(-32,24)
 		movement*=delta*5
-		move_and_collide(movement)
+		rpc_unreliable("move_and_collide",movement)
+		#move_and_collide(movement)
 	#move_and_slide(movement)
 	
 #	# Called every frame. Delta is time since last frame.
