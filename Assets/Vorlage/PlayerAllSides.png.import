@@ -7,10 +7,10 @@ path="res://.import/PlayerAllSides.png-3c2683215f45c0577f7f63be72f05364.stex"
 [deps]
 
 source_file="res://Assets/Vorlage/PlayerAllSides.png"
-source_md5="0bc870864ce852804ed0bcc1a9a34743"
+source_md5="b4cc1941f45ef05cff38c3ce7d8193fa"
 
 dest_files=[ "res://.import/PlayerAllSides.png-3c2683215f45c0577f7f63be72f05364.stex" ]
-dest_md5="0ec05c3478ba50895f5cee76aa96e24a"
+dest_md5="750fb19f46a5ed157fb10d0bf4334dcc"
 
 [params]
 
