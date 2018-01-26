@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Boden.png-d11ba5241366d5f88a8224a0ae700658.stex"
+path="res://.import/Boden_Erde2.png-4ab7a882d60b37c46de73a97b52d046c.stex"
 
 [deps]
 
-source_file="res://Assets/Vorlage/Boden.png"
-source_md5="cdca0e97be1bedeefae63df4d2c787cb"
+source_file="res://Assets/Vorlage/Boden_Erde2.png"
+source_md5="ccf8e1d82a80c2f50c40ca8253573917"
 
-dest_files=[ "res://.import/Boden.png-d11ba5241366d5f88a8224a0ae700658.stex" ]
-dest_md5="f01da8652cbcf2573b079e2657ba5736"
+dest_files=[ "res://.import/Boden_Erde2.png-4ab7a882d60b37c46de73a97b52d046c.stex" ]
+dest_md5="935101fb02fa39a8e0cf39bd23a81b59"
 
 [params]
 
