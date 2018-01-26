@@ -28,6 +28,7 @@ texture = ExtResource( 4 )
 
 [node name="WandDick" type="Sprite" parent="." index="4"]
 
+editor/display_folded = true
 texture = ExtResource( 5 )
 offset = Vector2( 0, -24 )
 _sections_unfolded = [ "Offset" ]
@@ -49,6 +50,7 @@ polygon = PoolVector2Array( 0, 12, -32, -12, 0, -36, 32, -12 )
 
 [node name="WandHinten" type="Sprite" parent="." index="5"]
 
+editor/display_folded = true
 texture = ExtResource( 6 )
 offset = Vector2( 0, -24 )
 _sections_unfolded = [ "Offset" ]
@@ -70,6 +72,7 @@ polygon = PoolVector2Array( -16, 0, -32, -12, 0, -36, 16, -24 )
 
 [node name="WandVorne" type="Sprite" parent="." index="6"]
 
+editor/display_folded = true
 texture = ExtResource( 7 )
 offset = Vector2( 0, -24 )
 _sections_unfolded = [ "Offset" ]

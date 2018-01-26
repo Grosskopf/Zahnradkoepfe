@@ -1,12 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/Mainchar.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Vorlage/PlaceholderPlayer.png" type="Texture" id=2]
-
-[sub_resource type="CircleShape2D" id=1]
-
-custom_solver_bias = 0.0
-radius = 16.0
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 
@@ -17,16 +12,15 @@ collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Material", "Pause", "Transform", "Visibility", "Z Index", "collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
-
-position = Vector2( 0, 20 )
-shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite" type="Sprite" parent="." index="1"]
+[node name="Sprite" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 2 )
 offset = Vector2( 0, -16 )
 _sections_unfolded = [ "Offset" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0, 48, -32, 24, 0, 0, 32, 24 )
 
 
