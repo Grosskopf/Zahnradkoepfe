@@ -57,11 +57,13 @@ func _process(delta):
 		else:
 			frame=256
 		movement*=delta*5
+		#print("added some stuff")
+		#print(len(get_parent().get_parent().movables))
 		rpc_unreliable("movement_added",movement,playerrot,frame,get_parent().get_parent().movables.find(holding))
 		$Sprite.region_rect=Rect2(frame,playerrot,64,128)
 		var collisions = move_and_collide(movement)
 		#movement_player=movement
-		if not holding==null and holding.get_class()=="KinematicBody2D" and not holding.get_groups().empty() and holding.get_groups()[0]=="Movables":
+		if not holding==null and holding.get_class()=="KinematicBody2D" and not holding.get_groups().empty() and holding.get_groups()[0]=="Movable":
 			holding.motion=movement
 		#	#if(moving):
 		#	#	holding.get_node("Sprite").region_rect=Rect2(holding.frame,playerrot,64,128)
@@ -74,19 +76,19 @@ func _process(delta):
 		#	print(collisions.collider.get_name())
 		if(Input.is_action_pressed("interact")):
 			if(playerrot==128):
-				if($RayTop.is_colliding() && not $RayTop.get_collider().get_groups().empty() && $RayTop.get_collider().get_groups()[0]=="Movables"):
+				if($RayTop.is_colliding() && not $RayTop.get_collider().get_groups().empty() && $RayTop.get_collider().get_groups()[0]=="Movable"):
 					holding=$RayTop.get_collider()
 					holding.held=true
 			elif(playerrot==256):
-				if($RayLeft.is_colliding() && not $RayLeft.get_collider().get_groups().empty() && $RayLeft.get_collider().get_groups()[0]=="Movables"):
+				if($RayLeft.is_colliding() && not $RayLeft.get_collider().get_groups().empty() && $RayLeft.get_collider().get_groups()[0]=="Movable"):
 					holding=$RayLeft.get_collider()
 					holding.held=true
 			elif(playerrot==384):
-				if($RayBottom.is_colliding() && not $RayBottom.get_collider().get_groups().empty() && $RayBottom.get_collider().get_groups()[0]=="Movables"):
+				if($RayBottom.is_colliding() && not $RayBottom.get_collider().get_groups().empty() && $RayBottom.get_collider().get_groups()[0]=="Movable"):
 					holding=$RayBottom.get_collider()
 					holding.held=true
 			elif(playerrot==0):
-				if($RayRight.is_colliding() && not $RayRight.get_collider().get_groups().empty() && $RayRight.get_collider().get_groups()[0]=="Movables"):
+				if($RayRight.is_colliding() && not $RayRight.get_collider().get_groups().empty() && $RayRight.get_collider().get_groups()[0]=="Movable"):
 					holding=$RayRight.get_collider()
 					holding.held=true
 		if Input.is_action_pressed("cableadd"):

@@ -146,7 +146,9 @@ position = Vector2( 926, 262 )
 
 position = Vector2( 636, 362 )
 
-[node name="Kiste" parent="Objekte" index="7" instance=ExtResource( 10 )]
+[node name="Kiste" parent="Objekte" index="7" groups=[
+"Movable",
+] instance=ExtResource( 10 )]
 
 position = Vector2( 446, 612 )
 
