@@ -30,6 +30,8 @@ slave func movement_added(movement,rotslave,frameslave,npcnr):
 #			holding_slave.get_node("Sprite").region_rect=Rect2(256,rotslave,64,128)
 slave func added_cable(posx,posy):
 	get_parent().get_parent().get_node("BodenObjekte").add_cable(posx,posy)
+slave func added_generator(posx,posy,playerrotat):
+	get_parent().get_parent().get_node("BodenObjekte").add_generator(posx,posy,playerrotat)
 func _process(delta):
 	if (is_network_master()):
 		$Camera2D.current=true
@@ -94,6 +96,9 @@ func _process(delta):
 		if Input.is_action_pressed("cableadd"):
 			rpc_unreliable("added_cable",position.x,position.y)
 			get_parent().get_parent().get_node("BodenObjekte").add_cable(position.x,position.y)
+		if Input.is_action_pressed("generatoradd"):
+			rpc_unreliable("added_generator",position.x,position.y,playerrot)
+			get_parent().get_parent().get_node("BodenObjekte").add_generator(position.x,position.y,playerrot)
 		#move_and_collide(movement)
 	#move_and_slide(movement)
 	

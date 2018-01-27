@@ -9,6 +9,8 @@ var accel=Vector2(0,0)
 var anim=0
 var frame
 var npcrot
+var fraction=0
+
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -54,6 +56,18 @@ func _process(delta):
 		frame=(int(anim)%4)*64
 	if get_tree().is_network_server():
 		go(motion*delta)
+	fraction-=5*delta
+	updatefraction()
+
+func updatefraction():
+	var colormod
+	if(fraction>=0):
+		colormod=Color(1.0,1-0.01*fraction,1-0.01*fraction,1.0)
+	else:
+		colormod=Color(1.0+0.01*fraction,1.0,1.0+0.01*fraction,1.0)
+	$HSlider.modulate=colormod
+	$HSlider.value=fraction
+
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass

@@ -114,7 +114,7 @@ collision_mask = 1
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( 131081, 6, 0, 196614, 3, 0, 196615, 3, 0, 196616, 7, 0, 262148, 3, 0, 262149, 3, 0, 262150, 3, 0, 262151, 6, 0, 327684, 3, 0, 327697, 4, 0, 393221, 5, 0, 458762, 0, 0, 589827, 7, 0, 589828, 7, 0, 589834, 0, 0, 589839, 5, 0, 655373, 6, 0 )
-_sections_unfolded = [ "Cell", "Collision", "Transform" ]
+_sections_unfolded = [ "Cell", "Collision", "Material", "Transform" ]
 
 [node name="WandHoch" parent="Objekte" index="0" instance=ExtResource( 5 )]
 

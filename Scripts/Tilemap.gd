@@ -28,9 +28,131 @@ func add_cable(xpos,ypos):
 	var mappos=Vector2()
 	mappos=world_to_map(Vector2(xpos,ypos))
 	add_cable_intern(mappos)
+	
+func add_generator(xpos,ypos,p_rot):
+	var mappos=Vector2()
+	mappos=world_to_map(Vector2(xpos,ypos))
+	var generatorpos=Vector2(0,0)
+	var neighbours=get_neighbours(mappos)
+	
+	if(p_rot==0):
+		generatorpos=neighbours[0]
+	elif(p_rot==128):
+		generatorpos=neighbours[1]
+	elif(p_rot==256):
+		generatorpos=neighbours[2]
+	elif(p_rot==384):
+		generatorpos=neighbours[3]
+	add_generator_intern(generatorpos)
+
+func add_generator_intern(generatorpos):
+	var cables=remove_cable_intern(generatorpos)
+	for cable in cables:
+		cablesactive[cable]=true
+		set_cell(generatorpos.x,generatorpos.y,-1)#TODO
+	pass
+
+func remove_cable_intern(mappos):
+	var tosplitcable=find_cable(mappos.x,mappos.y)
+	if tosplitcable==-1:
+		return []
+	set_cell(mappos.x,mappos.y,-1)
+	var checkarray=[]
+	var cableleft=[]
+	var number=-1
+	for elementnr in range(len(cables[tosplitcable])):
+		checkarray.append(cables[tosplitcable][elementnr])
+		if cables[tosplitcable][elementnr][0]==mappos.x and cables[tosplitcable][elementnr][1]==mappos.y:
+			number=elementnr
+	cables[tosplitcable].remove(number)
+	checkarray.remove(number)
+	var neighbours=getneighbours(mappos)
+	for neighbournr in range(4):
+		for elementnr in range(len(checkarray)):
+			if checkarray[elementnr][0]==neighbours[neighbournr][0] and checkarray[elementnr][1]==neighbours[neighbournr][1]:
+				checkarray[elementnr][2]=-(neighbournr+1)
+	var resultarray=get_neighbourspaths(checkarray)
+	var resultarrayarray=[]
+	var results=[]
+	for elementnr in range(len(resultarray)):
+		var new=false
+		for i in range(len(results)):
+			if resultarray[elementnr][2]==results[i]:
+				new=true
+		if(new):
+			results.append(resultarray[elementnr][2])
+		resultarrayarray[results.find(resultarray[elementnr][2])].append(resultarray[elementnr])
+	var toreturn=[tosplitcable]
+	if(len(resultarrayarray)==2):
+		var j=len(cables[tosplitcable])-1
+		for i in cables[tosplitcable]:
+			for each in resultarrayarray[1]:
+				if cables[tosplitcable][j-i][0]==each[0] and cables[tosplitcable][j-i][1]==each[1]:
+					cables[tosplitcable].remove(j-i)
+		cables.append(resultarrayarray[1])
+		cablesactive.append(false)
+		toreturn.append(len(cables)-1)
+	if(len(resultarrayarray)==3):
+		var j=len(cables[tosplitcable])-1
+		for i in cables[tosplitcable]:
+			for each in resultarrayarray[2]:
+				if cables[tosplitcable][j-i][0]==each[0] and cables[tosplitcable][j-i][1]==each[1]:
+					cables[tosplitcable].remove(j-i)
+		cables.append(resultarrayarray[2])
+		cablesactive.append(false)
+		toreturn.append(len(cables)-1)
+	if(len(resultarrayarray)==4):
+		var j=len(cables[tosplitcable])-1
+		for i in cables[tosplitcable]:
+			for each in resultarrayarray[3]:
+				if cables[tosplitcable][j-i][0]==each[0] and cables[tosplitcable][j-i][1]==each[1]:
+					cables[tosplitcable].remove(j-i)
+		cables.append(resultarrayarray[3])
+		cablesactive.append(false)
+		toreturn.append(len(cables)-1)
+	return toreturn
+	
+
+func get_neighbourspaths(checkarray):
+	var foundnr=0
+	for elementnr in range(len(checkarray)):
+		for startnr in range(4):
+			if(checkarray[elementnr][2]==-(startnr+1)):
+				var neighbours=get_neighbours(Vector2(checkarray[elementnr][0],checkarray[elementnr][1]))
+				for elementnr2 in range(len(checkarray)):
+					for startnr2 in range(4):
+						if(checkarray[elementnr2][0]==neighbours[startnr2][0] and checkarray[elementnr2][1]==neighbours[startnr2][1]):
+							var nummer=checkarray[elementnr2][2]
+							if(nummer<0 and nummer>-(startnr+1)):
+								for elementnr3 in range(len(checkarray)):
+									if checkarray[elementnr3][2]==nummer:
+										checkarray[elementnr3][2]=-(startnr+1)
+										foundnr+=1
+							elif(nummer>=0):
+								checkarray[elementnr2][2]=-(startnr+1)
+								foundnr+=1
+	if(foundnr>=0):
+		return get_neighbourspaths(checkarray)
+	else:
+		return checkarray
+
+func get_neighbours(mappos):
+	var outpos=[]
+	if (int(mappos.x)%2)==0:
+		outpos.append(mappos+Vector2(1,-1))
+		outpos.append(mappos+Vector2(-1,-1))
+		outpos.append(mappos+Vector2(-1,0))
+		outpos.append(mappos+Vector2(1,0))
+	else:
+		outpos.append(mappos+Vector2(1,0))
+		outpos.append(mappos+Vector2(-1,0))
+		outpos.append(mappos+Vector2(-1,1))
+		outpos.append(mappos+Vector2(1,1))
+	return outpos
 
 func add_cable_intern(mappos,is_orig=true):
 	var xposmap=mappos.x
+	var cablehere=find_cable(mappos)
 	var cabletopright=-1
 	var cablebottomright=-1
 	var cablebottomleft=-1
@@ -137,12 +259,13 @@ func add_cable_intern(mappos,is_orig=true):
 			cabletoadd=mergecables(cablebottomleft,cabletopright,cablebottomright,cabletopleft)
 		else:
 			cabletoadd=cabletopright
-	if(cabletoadd==-1):
+	if(cabletoadd==-1 and cablehere==-1):
 		cables.append([[mappos.x,mappos.y,currenttoset]])
 		cablesactive.append(false)
 		set_cell(mappos.x,mappos.y,41+currenttoset)
 	else:
-		cables[cabletoadd].append([mappos.x,mappos.y,currenttoset])
+		if cablehere==-1:
+			cables[cabletoadd].append([mappos.x,mappos.y,currenttoset])
 		if(cablesactive[cabletoadd]):
 			set_cell(mappos.x,mappos.y,animatedtiles3nums[currenttoset])
 		else:
