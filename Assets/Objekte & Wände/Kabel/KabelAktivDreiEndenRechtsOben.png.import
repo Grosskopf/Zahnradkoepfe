@@ -10,7 +10,7 @@ source_file="res://Assets/Objekte & Wände/Kabel/KabelAktivDreiEndenRechtsOben.p
 source_md5="5a8e66148d87e7228754cb4b2fbdae46"
 
 dest_files=[ "res://.import/KabelAktivDreiEndenRechtsOben.png-b75db805450bab8964b129fea6daa12b.stex" ]
-dest_md5="7dbe176b85927144089a0d825d75b740"
+dest_md5="763d749bbfee647bcb7916d037076a4e"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -28,5 +28,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

@@ -10,7 +10,7 @@ source_file="res://Assets/Objekte & Wände/Kabel/KabelInaktivKurveOben.png"
 source_md5="242cb02f979c0f532a6a34c1ad7a91f0"
 
 dest_files=[ "res://.import/KabelInaktivKurveOben.png-1a89d567deeae24a5ee7b7bc6c6ea85d.stex" ]
-dest_md5="2250445b52d2feeb26ebcded82cf59ad"
+dest_md5="3c567c6fa423f908f51479bdca05a8dd"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -28,5 +28,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

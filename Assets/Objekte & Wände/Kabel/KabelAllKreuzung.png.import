@@ -10,7 +10,7 @@ source_file="res://Assets/Objekte & Wände/Kabel/KabelAllKreuzung.png"
 source_md5="991233239dfa977b28854ff695db65b6"
 
 dest_files=[ "res://.import/KabelAllKreuzung.png-a8e381c1b1566c2cc84e6d02b7bbba98.stex" ]
-dest_md5="c0a1b38c700751721d4a487367cd2721"
+dest_md5="bbbb2d997bb7284505665b131c5bcfbf"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -28,5 +28,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

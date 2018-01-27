@@ -10,7 +10,7 @@ source_file="res://Assets/Objekte & Wände/Kabel/KabelAktivKurveObenFrame2.png"
 source_md5="8f817c39907fd07db433b560350c718a"
 
 dest_files=[ "res://.import/KabelAktivKurveObenFrame2.png-19169f01387b9cbba4eeb0eaf91754c4.stex" ]
-dest_md5="0676515038badd09a4651a0a3b433548"
+dest_md5="2f9a0fcb76708036323ff1e1c3330341"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -28,5 +28,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

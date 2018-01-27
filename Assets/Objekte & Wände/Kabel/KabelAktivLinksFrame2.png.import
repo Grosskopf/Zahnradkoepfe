@@ -10,7 +10,7 @@ source_file="res://Assets/Objekte & Wände/Kabel/KabelAktivLinksFrame2.png"
 source_md5="ae75916a5762897f0c74e3055d6b8c71"
 
 dest_files=[ "res://.import/KabelAktivLinksFrame2.png-91ff41577d42a56576a317dafa10125d.stex" ]
-dest_md5="bb5bc5701b6407a14b07c6585acf2b2c"
+dest_md5="767b3b812b0a840ba4d9fe706d1da229"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -28,5 +28,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

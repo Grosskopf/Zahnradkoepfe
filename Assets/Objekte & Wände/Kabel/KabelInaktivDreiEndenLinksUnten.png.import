@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/KabelInaktivKurveRechts.png-e3dc667b4fb1c4e2a739fd87676ff37e.stex"
+path="res://.import/KabelInaktivDreiEndenLinksUnten.png-7a1b422a974e605a47d1be015a499649.stex"
 
 [deps]
 
-source_file="res://Assets/Objekte & Wände/Kabel/KabelInaktivKurveRechts.png"
-source_md5="cec8da3e650f0635a237dc7d8f01ad8c"
+source_file="res://Assets/Objekte & Wände/Kabel/KabelInaktivDreiEndenLinksUnten.png"
+source_md5="8246058917b0be65935cd6165f925949"
 
-dest_files=[ "res://.import/KabelInaktivKurveRechts.png-e3dc667b4fb1c4e2a739fd87676ff37e.stex" ]
-dest_md5="0b43e10e172faf9b298019623d2d7eb5"
+dest_files=[ "res://.import/KabelInaktivDreiEndenLinksUnten.png-7a1b422a974e605a47d1be015a499649.stex" ]
+dest_md5="3cf44a8902d7c2d440b69cd4851fee81"
 
 [params]
 

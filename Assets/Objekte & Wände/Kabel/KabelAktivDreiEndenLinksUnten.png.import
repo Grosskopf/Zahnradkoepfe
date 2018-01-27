@@ -10,7 +10,7 @@ source_file="res://Assets/Objekte & Wände/Kabel/KabelAktivDreiEndenLinksUnten.p
 source_md5="7fbbb7ba4beacef180cb793bde83c2df"
 
 dest_files=[ "res://.import/KabelAktivDreiEndenLinksUnten.png-1cf4d19a5a3eecb86288ad3d29c828ef.stex" ]
-dest_md5="dbfa0ada85da48148d225139bd012037"
+dest_md5="9142b21a5e19a52d5bf1fdbfef63dbf3"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -28,5 +28,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

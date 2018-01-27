@@ -10,7 +10,7 @@ source_file="res://Assets/Objekte & Wände/Kabel/KabelInaktivRechts.png"
 source_md5="786dd7528e8038c710ff554713ee3b3c"
 
 dest_files=[ "res://.import/KabelInaktivRechts.png-e6ac865129342fe628ad6135576d692a.stex" ]
-dest_md5="33ba0f95f34f67438a3a0486753cf282"
+dest_md5="607e96e8d478ffe93c3fbfa60f216db7"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -28,5 +28,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
