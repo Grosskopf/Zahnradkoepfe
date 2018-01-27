@@ -152,7 +152,7 @@ func get_neighbours(mappos):
 
 func add_cable_intern(mappos,is_orig=true):
 	var xposmap=mappos.x
-	var cablehere=find_cable(mappos)
+	var cablehere=find_cable(mappos.x,mappos.y)
 	var cabletopright=-1
 	var cablebottomright=-1
 	var cablebottomleft=-1
