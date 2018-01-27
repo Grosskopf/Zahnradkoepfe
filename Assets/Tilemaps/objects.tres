@@ -1,16 +1,46 @@
-[gd_resource type="TileSet" load_steps=18 format=2]
+[gd_resource type="TileSet" load_steps=48 format=2]
 
 [ext_resource path="res://Assets/Objekte & Wände/Strassenlaterne1.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Vorlage/StrassenlaterneKaputt1.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKurveUntenFrame3.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Objekte & Wände/StrassenlaterneKaputt2.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Objekte & Wände/Wand_Beton.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Objekte & Wände/BankLinks.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Objekte & Wände/BankRechts.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Objekte & Wände/WandHinten1.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Objekte & Wände/WandVorne1.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKurveUntenFrame1.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKurveUntenFrame2.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKurveObenFrame1.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKurveObenFrame2.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKurveObenFrame3.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKurveRechtsFrame1.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKurveRechtsFrame2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKurveRechtsFrame3.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKurveLinksFrame1.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKurveLinksFrame2.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKurveLinksFrame3.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Objekte & Wände/StrassenlaterneKaputt2.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivLinks.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivLinksFrame2.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivLinksFrame3.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivRechtsFrame1.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivRechtsFrame2.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivRechtsFrame3.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivDreiEndenRechtsUntenFrame1.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivDreiEndenRechtsUntenFrame2.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivDreiEndenRechtsUntenFrame3.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivDreiEndenLinksUntenFrame1.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Objekte & Wände/Wand_Beton.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivDreiEndenLinksUntenFrame2.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivDreiEndenLinksUntenFrame3.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivDreiEndenLinksObenFrame1.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivDreiEndenLinksObenFrame2.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivDreiEndenLinksObenFrame3.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivDreiEndenRechtsObenFrame1.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivDreiEndenRechtsObenFrame2.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivDreiEndenRechtsObenFrame3.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKreuzungFrame1.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKreuzungFrame2.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Objekte & Wände/BankLinks.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKreuzungFrame3.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Objekte & Wände/BankRechts.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Objekte & Wände/WandHinten1.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Objekte & Wände/WandVorne1.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKurveUntenFrame1.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKurveUntenFrame2.png" type="Texture" id=41]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -73,7 +103,7 @@ points = PoolVector2Array( 0, 12, -16, 0, 16, -24, 32, -12 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 32, 24 )
 } ]
 2/name = "Lamp_off2"
-2/texture = ExtResource( 4 )
+2/texture = ExtResource( 13 )
 2/tex_offset = Vector2( 0, -104 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 0, 0, 64, 150 )
@@ -87,7 +117,7 @@ points = PoolVector2Array( 0, 12, -16, 0, 16, -24, 32, -12 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 32, 24 )
 } ]
 3/name = "WandDick"
-3/texture = ExtResource( 5 )
+3/texture = ExtResource( 24 )
 3/tex_offset = Vector2( 0, -24 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 0, 0, 64, 72 )
@@ -101,7 +131,7 @@ points = PoolVector2Array( 0, 12, -16, 0, 16, -24, 32, -12 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 32, 36 )
 } ]
 4/name = "BankLinks"
-4/texture = ExtResource( 6 )
+4/texture = ExtResource( 35 )
 4/tex_offset = Vector2( 0, -24 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 0, 0, 64, 72 )
@@ -115,7 +145,7 @@ points = PoolVector2Array( 0, 12, -16, 0, 16, -24, 32, -12 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 32, 36 )
 } ]
 5/name = "BankRechts"
-5/texture = ExtResource( 7 )
+5/texture = ExtResource( 37 )
 5/tex_offset = Vector2( 0, -24 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 0, 0, 64, 72 )
@@ -129,7 +159,7 @@ points = PoolVector2Array( 0, 12, -16, 0, 16, -24, 32, -12 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 32, 36 )
 } ]
 6/name = "WandHinten"
-6/texture = ExtResource( 8 )
+6/texture = ExtResource( 38 )
 6/tex_offset = Vector2( 0, -24 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 0, 0, 64, 72 )
@@ -143,7 +173,7 @@ points = PoolVector2Array( 0, 12, -16, 0, 16, -24, 32, -12 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 32, 36 )
 } ]
 7/name = "WandVorne"
-7/texture = ExtResource( 9 )
+7/texture = ExtResource( 39 )
 7/tex_offset = Vector2( 0, -24 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 0, 0, 64, 72 )
@@ -156,8 +186,8 @@ points = PoolVector2Array( 0, 12, -16, 0, 16, -24, 32, -12 )
 "shape": SubResource( 4 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 32, 36 )
 } ]
-8/name = "Kurve1"
-8/texture = ExtResource( 10 )
+8/name = "KurveUnten1"
+8/texture = ExtResource( 40 )
 8/tex_offset = Vector2( 0, -12 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 0, 0, 64, 48 )
@@ -165,8 +195,8 @@ points = PoolVector2Array( 0, 12, -16, 0, 16, -24, 32, -12 )
 8/occluder_offset = Vector2( 32, 24 )
 8/navigation_offset = Vector2( 32, 24 )
 8/shapes = [  ]
-9/name = "Kurve2"
-9/texture = ExtResource( 11 )
+9/name = "KurveUnten2"
+9/texture = ExtResource( 41 )
 9/tex_offset = Vector2( 0, -12 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 0, 0, 64, 48 )
@@ -174,7 +204,7 @@ points = PoolVector2Array( 0, 12, -16, 0, 16, -24, 32, -12 )
 9/occluder_offset = Vector2( 32, 24 )
 9/navigation_offset = Vector2( 32, 24 )
 9/shapes = [  ]
-10/name = "Kurve3"
+10/name = "KurveUnten3"
 10/texture = ExtResource( 3 )
 10/tex_offset = Vector2( 0, -12 )
 10/modulate = Color( 1, 1, 1, 1 )
@@ -183,4 +213,274 @@ points = PoolVector2Array( 0, 12, -16, 0, 16, -24, 32, -12 )
 10/occluder_offset = Vector2( 32, 24 )
 10/navigation_offset = Vector2( 32, 24 )
 10/shapes = [  ]
+11/name = "KurveOben1"
+11/texture = ExtResource( 4 )
+11/tex_offset = Vector2( 0, -12 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 0, 0, 64, 48 )
+11/is_autotile = false
+11/occluder_offset = Vector2( 32, 24 )
+11/navigation_offset = Vector2( 32, 24 )
+11/shapes = [  ]
+12/name = "KurveOben2"
+12/texture = ExtResource( 5 )
+12/tex_offset = Vector2( 0, -12 )
+12/modulate = Color( 1, 1, 1, 1 )
+12/region = Rect2( 0, 0, 64, 48 )
+12/is_autotile = false
+12/occluder_offset = Vector2( 32, 24 )
+12/navigation_offset = Vector2( 32, 24 )
+12/shapes = [  ]
+13/name = "KurveOben3"
+13/texture = ExtResource( 6 )
+13/tex_offset = Vector2( 0, -12 )
+13/modulate = Color( 1, 1, 1, 1 )
+13/region = Rect2( 0, 0, 64, 48 )
+13/is_autotile = false
+13/occluder_offset = Vector2( 32, 24 )
+13/navigation_offset = Vector2( 32, 24 )
+13/shapes = [  ]
+14/name = "KurveRechts1"
+14/texture = ExtResource( 7 )
+14/tex_offset = Vector2( 0, -12 )
+14/modulate = Color( 1, 1, 1, 1 )
+14/region = Rect2( 0, 0, 64, 48 )
+14/is_autotile = false
+14/occluder_offset = Vector2( 32, 24 )
+14/navigation_offset = Vector2( 32, 24 )
+14/shapes = [  ]
+15/name = "KurveRechts2"
+15/texture = ExtResource( 8 )
+15/tex_offset = Vector2( 0, -12 )
+15/modulate = Color( 1, 1, 1, 1 )
+15/region = Rect2( 0, 0, 64, 48 )
+15/is_autotile = false
+15/occluder_offset = Vector2( 32, 24 )
+15/navigation_offset = Vector2( 32, 24 )
+15/shapes = [  ]
+16/name = "KurveRechts3"
+16/texture = ExtResource( 9 )
+16/tex_offset = Vector2( 0, -12 )
+16/modulate = Color( 1, 1, 1, 1 )
+16/region = Rect2( 0, 0, 64, 48 )
+16/is_autotile = false
+16/occluder_offset = Vector2( 32, 24 )
+16/navigation_offset = Vector2( 32, 24 )
+16/shapes = [  ]
+17/name = "KurveLinks1"
+17/texture = ExtResource( 10 )
+17/tex_offset = Vector2( 0, -12 )
+17/modulate = Color( 1, 1, 1, 1 )
+17/region = Rect2( 0, 0, 64, 48 )
+17/is_autotile = false
+17/occluder_offset = Vector2( 32, 24 )
+17/navigation_offset = Vector2( 32, 24 )
+17/shapes = [  ]
+18/name = "KurveLinks2"
+18/texture = ExtResource( 11 )
+18/tex_offset = Vector2( 0, -12 )
+18/modulate = Color( 1, 1, 1, 1 )
+18/region = Rect2( 0, 0, 64, 48 )
+18/is_autotile = false
+18/occluder_offset = Vector2( 32, 24 )
+18/navigation_offset = Vector2( 32, 24 )
+18/shapes = [  ]
+19/name = "KurveLinks3"
+19/texture = ExtResource( 12 )
+19/tex_offset = Vector2( 0, -12 )
+19/modulate = Color( 1, 1, 1, 1 )
+19/region = Rect2( 0, 0, 64, 48 )
+19/is_autotile = false
+19/occluder_offset = Vector2( 32, 24 )
+19/navigation_offset = Vector2( 32, 24 )
+19/shapes = [  ]
+20/name = "GeradeLinks1"
+20/texture = ExtResource( 14 )
+20/tex_offset = Vector2( 0, -12 )
+20/modulate = Color( 1, 1, 1, 1 )
+20/region = Rect2( 0, 0, 64, 48 )
+20/is_autotile = false
+20/occluder_offset = Vector2( 32, 24 )
+20/navigation_offset = Vector2( 32, 24 )
+20/shapes = [  ]
+21/name = "GeradeLinks2"
+21/texture = ExtResource( 15 )
+21/tex_offset = Vector2( 0, -12 )
+21/modulate = Color( 1, 1, 1, 1 )
+21/region = Rect2( 0, 0, 64, 48 )
+21/is_autotile = false
+21/occluder_offset = Vector2( 32, 24 )
+21/navigation_offset = Vector2( 32, 24 )
+21/shapes = [  ]
+22/name = "GeradeLinks3"
+22/texture = ExtResource( 16 )
+22/tex_offset = Vector2( 0, -12 )
+22/modulate = Color( 1, 1, 1, 1 )
+22/region = Rect2( 0, 0, 64, 48 )
+22/is_autotile = false
+22/occluder_offset = Vector2( 32, 24 )
+22/navigation_offset = Vector2( 32, 24 )
+22/shapes = [  ]
+23/name = "GeradeRechts1"
+23/texture = ExtResource( 17 )
+23/tex_offset = Vector2( 0, -12 )
+23/modulate = Color( 1, 1, 1, 1 )
+23/region = Rect2( 0, 0, 64, 48 )
+23/is_autotile = false
+23/occluder_offset = Vector2( 32, 24 )
+23/navigation_offset = Vector2( 32, 24 )
+23/shapes = [  ]
+24/name = "GeradeRechts2"
+24/texture = ExtResource( 18 )
+24/tex_offset = Vector2( 0, -12 )
+24/modulate = Color( 1, 1, 1, 1 )
+24/region = Rect2( 0, 0, 64, 48 )
+24/is_autotile = false
+24/occluder_offset = Vector2( 32, 24 )
+24/navigation_offset = Vector2( 32, 24 )
+24/shapes = [  ]
+25/name = "GeradeRechts3"
+25/texture = ExtResource( 19 )
+25/tex_offset = Vector2( 0, -12 )
+25/modulate = Color( 1, 1, 1, 1 )
+25/region = Rect2( 0, 0, 64, 48 )
+25/is_autotile = false
+25/occluder_offset = Vector2( 32, 24 )
+25/navigation_offset = Vector2( 32, 24 )
+25/shapes = [  ]
+26/name = "DreieckUnten1"
+26/texture = ExtResource( 20 )
+26/tex_offset = Vector2( 0, -12 )
+26/modulate = Color( 1, 1, 1, 1 )
+26/region = Rect2( 0, 0, 64, 48 )
+26/is_autotile = false
+26/occluder_offset = Vector2( 32, 24 )
+26/navigation_offset = Vector2( 32, 24 )
+26/shapes = [  ]
+27/name = "DreieckUnten2"
+27/texture = ExtResource( 21 )
+27/tex_offset = Vector2( 0, -12 )
+27/modulate = Color( 1, 1, 1, 1 )
+27/region = Rect2( 0, 0, 64, 48 )
+27/is_autotile = false
+27/occluder_offset = Vector2( 32, 24 )
+27/navigation_offset = Vector2( 32, 24 )
+27/shapes = [  ]
+28/name = "DreieckUnten3"
+28/texture = ExtResource( 22 )
+28/tex_offset = Vector2( 0, -12 )
+28/modulate = Color( 1, 1, 1, 1 )
+28/region = Rect2( 0, 0, 64, 48 )
+28/is_autotile = false
+28/occluder_offset = Vector2( 32, 24 )
+28/navigation_offset = Vector2( 32, 24 )
+28/shapes = [  ]
+29/name = "DreieckLeft1"
+29/texture = ExtResource( 23 )
+29/tex_offset = Vector2( 0, -12 )
+29/modulate = Color( 1, 1, 1, 1 )
+29/region = Rect2( 0, 0, 64, 48 )
+29/is_autotile = false
+29/occluder_offset = Vector2( 32, 24 )
+29/navigation_offset = Vector2( 32, 24 )
+29/shapes = [  ]
+30/name = "DreieckLeft2"
+30/texture = ExtResource( 25 )
+30/tex_offset = Vector2( 0, -12 )
+30/modulate = Color( 1, 1, 1, 1 )
+30/region = Rect2( 0, 0, 64, 48 )
+30/is_autotile = false
+30/occluder_offset = Vector2( 32, 24 )
+30/navigation_offset = Vector2( 32, 24 )
+30/shapes = [  ]
+31/name = "DreieckLeft3"
+31/texture = ExtResource( 26 )
+31/tex_offset = Vector2( 0, -12 )
+31/modulate = Color( 1, 1, 1, 1 )
+31/region = Rect2( 0, 0, 64, 48 )
+31/is_autotile = false
+31/occluder_offset = Vector2( 32, 24 )
+31/navigation_offset = Vector2( 32, 24 )
+31/shapes = [  ]
+32/name = "DreieckOben1"
+32/texture = ExtResource( 27 )
+32/tex_offset = Vector2( 0, -12 )
+32/modulate = Color( 1, 1, 1, 1 )
+32/region = Rect2( 0, 0, 64, 48 )
+32/is_autotile = false
+32/occluder_offset = Vector2( 32, 24 )
+32/navigation_offset = Vector2( 32, 24 )
+32/shapes = [  ]
+33/name = "DreieckOben2"
+33/texture = ExtResource( 28 )
+33/tex_offset = Vector2( 0, -12 )
+33/modulate = Color( 1, 1, 1, 1 )
+33/region = Rect2( 0, 0, 64, 48 )
+33/is_autotile = false
+33/occluder_offset = Vector2( 32, 24 )
+33/navigation_offset = Vector2( 32, 24 )
+33/shapes = [  ]
+34/name = "DreieckOben3"
+34/texture = ExtResource( 29 )
+34/tex_offset = Vector2( 0, -12 )
+34/modulate = Color( 1, 1, 1, 1 )
+34/region = Rect2( 0, 0, 64, 48 )
+34/is_autotile = false
+34/occluder_offset = Vector2( 32, 24 )
+34/navigation_offset = Vector2( 32, 24 )
+34/shapes = [  ]
+35/name = "DreieckRechts1"
+35/texture = ExtResource( 30 )
+35/tex_offset = Vector2( 0, -12 )
+35/modulate = Color( 1, 1, 1, 1 )
+35/region = Rect2( 0, 0, 64, 48 )
+35/is_autotile = false
+35/occluder_offset = Vector2( 32, 24 )
+35/navigation_offset = Vector2( 32, 24 )
+35/shapes = [  ]
+36/name = "DreieckRechts2"
+36/texture = ExtResource( 31 )
+36/tex_offset = Vector2( 0, -12 )
+36/modulate = Color( 1, 1, 1, 1 )
+36/region = Rect2( 0, 0, 64, 48 )
+36/is_autotile = false
+36/occluder_offset = Vector2( 32, 24 )
+36/navigation_offset = Vector2( 32, 24 )
+36/shapes = [  ]
+37/name = "DreieckRechts3"
+37/texture = ExtResource( 32 )
+37/tex_offset = Vector2( 0, -12 )
+37/modulate = Color( 1, 1, 1, 1 )
+37/region = Rect2( 0, 0, 64, 48 )
+37/is_autotile = false
+37/occluder_offset = Vector2( 32, 24 )
+37/navigation_offset = Vector2( 32, 24 )
+37/shapes = [  ]
+38/name = "Kreuzung1"
+38/texture = ExtResource( 33 )
+38/tex_offset = Vector2( 0, -12 )
+38/modulate = Color( 1, 1, 1, 1 )
+38/region = Rect2( 0, 0, 64, 48 )
+38/is_autotile = false
+38/occluder_offset = Vector2( 32, 24 )
+38/navigation_offset = Vector2( 32, 24 )
+38/shapes = [  ]
+39/name = "Kreuzung2"
+39/texture = ExtResource( 34 )
+39/tex_offset = Vector2( 0, -12 )
+39/modulate = Color( 1, 1, 1, 1 )
+39/region = Rect2( 0, 0, 64, 48 )
+39/is_autotile = false
+39/occluder_offset = Vector2( 32, 24 )
+39/navigation_offset = Vector2( 32, 24 )
+39/shapes = [  ]
+40/name = "Kreuzung3"
+40/texture = ExtResource( 36 )
+40/tex_offset = Vector2( 0, -12 )
+40/modulate = Color( 1, 1, 1, 1 )
+40/region = Rect2( 0, 0, 64, 48 )
+40/is_autotile = false
+40/occluder_offset = Vector2( 32, 24 )
+40/navigation_offset = Vector2( 32, 24 )
+40/shapes = [  ]
 

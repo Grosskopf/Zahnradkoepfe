@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Assets/Objekte & Wände/Strassenlaterne1.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Vorlage/StrassenlaterneKaputt1.png" type="Texture" id=2]
@@ -11,6 +11,36 @@
 [ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKurveUntenFrame1.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKurveUntenFrame2.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKurveUntenFrame3.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKurveObenFrame1.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKurveObenFrame2.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKurveObenFrame3.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKurveRechtsFrame1.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKurveRechtsFrame2.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKurveRechtsFrame3.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKurveLinksFrame1.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKurveLinksFrame2.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKurveLinksFrame3.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivLinks.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivLinksFrame2.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivLinksFrame3.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivRechtsFrame1.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivRechtsFrame2.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivRechtsFrame3.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivDreiEndenRechtsUntenFrame1.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivDreiEndenRechtsUntenFrame2.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivDreiEndenRechtsUntenFrame3.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivDreiEndenLinksUntenFrame1.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivDreiEndenLinksUntenFrame2.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivDreiEndenLinksUntenFrame3.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivDreiEndenLinksObenFrame1.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivDreiEndenLinksObenFrame2.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivDreiEndenLinksObenFrame3.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivDreiEndenRechtsObenFrame1.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivDreiEndenRechtsObenFrame2.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivDreiEndenRechtsObenFrame3.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKreuzungFrame1.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKreuzungFrame2.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKreuzungFrame3.png" type="Texture" id=41]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -204,21 +234,201 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( 0, 12, -16, 0, 16, -24, 32, -12 )
 
-[node name="Kurve1" type="Sprite" parent="." index="8"]
+[node name="KurveUnten1" type="Sprite" parent="." index="8"]
 
 texture = ExtResource( 9 )
 offset = Vector2( 0, -12 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="Kurve2" type="Sprite" parent="." index="9"]
+[node name="KurveUnten2" type="Sprite" parent="." index="9"]
 
 texture = ExtResource( 10 )
 offset = Vector2( 0, -12 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="Kurve3" type="Sprite" parent="." index="10"]
+[node name="KurveUnten3" type="Sprite" parent="." index="10"]
 
 texture = ExtResource( 11 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="KurveOben1" type="Sprite" parent="." index="11"]
+
+texture = ExtResource( 12 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="KurveOben2" type="Sprite" parent="." index="12"]
+
+texture = ExtResource( 13 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="KurveOben3" type="Sprite" parent="." index="13"]
+
+texture = ExtResource( 14 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="KurveRechts1" type="Sprite" parent="." index="14"]
+
+texture = ExtResource( 15 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="KurveRechts2" type="Sprite" parent="." index="15"]
+
+texture = ExtResource( 16 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="KurveRechts3" type="Sprite" parent="." index="16"]
+
+texture = ExtResource( 17 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="KurveLinks1" type="Sprite" parent="." index="17"]
+
+texture = ExtResource( 18 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="KurveLinks2" type="Sprite" parent="." index="18"]
+
+texture = ExtResource( 19 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="KurveLinks3" type="Sprite" parent="." index="19"]
+
+texture = ExtResource( 20 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="GeradeLinks1" type="Sprite" parent="." index="20"]
+
+texture = ExtResource( 21 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="GeradeLinks2" type="Sprite" parent="." index="21"]
+
+texture = ExtResource( 22 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="GeradeLinks3" type="Sprite" parent="." index="22"]
+
+texture = ExtResource( 23 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="GeradeRechts1" type="Sprite" parent="." index="23"]
+
+texture = ExtResource( 24 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="GeradeRechts2" type="Sprite" parent="." index="24"]
+
+texture = ExtResource( 25 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="GeradeRechts3" type="Sprite" parent="." index="25"]
+
+texture = ExtResource( 26 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="DreieckUnten1" type="Sprite" parent="." index="26"]
+
+texture = ExtResource( 27 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="DreieckUnten2" type="Sprite" parent="." index="27"]
+
+texture = ExtResource( 28 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="DreieckUnten3" type="Sprite" parent="." index="28"]
+
+texture = ExtResource( 29 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="DreieckLeft1" type="Sprite" parent="." index="29"]
+
+texture = ExtResource( 30 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="DreieckLeft2" type="Sprite" parent="." index="30"]
+
+texture = ExtResource( 31 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="DreieckLeft3" type="Sprite" parent="." index="31"]
+
+texture = ExtResource( 32 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="DreieckOben1" type="Sprite" parent="." index="32"]
+
+texture = ExtResource( 33 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="DreieckOben2" type="Sprite" parent="." index="33"]
+
+texture = ExtResource( 34 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="DreieckOben3" type="Sprite" parent="." index="34"]
+
+texture = ExtResource( 35 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="DreieckRechts1" type="Sprite" parent="." index="35"]
+
+texture = ExtResource( 36 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="DreieckRechts2" type="Sprite" parent="." index="36"]
+
+texture = ExtResource( 37 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="DreieckRechts3" type="Sprite" parent="." index="37"]
+
+texture = ExtResource( 38 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="Kreuzung1" type="Sprite" parent="." index="38"]
+
+texture = ExtResource( 39 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="Kreuzung2" type="Sprite" parent="." index="39"]
+
+texture = ExtResource( 40 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="Kreuzung3" type="Sprite" parent="." index="40"]
+
+texture = ExtResource( 41 )
 offset = Vector2( 0, -12 )
 _sections_unfolded = [ "Offset" ]
 
