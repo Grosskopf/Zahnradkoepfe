@@ -5,6 +5,7 @@
 
 [node name="NPC" type="KinematicBody2D" groups=[
 "NPC",
+"Movable",
 ]]
 
 input_pickable = false

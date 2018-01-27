@@ -3,7 +3,7 @@ extends Control
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
-var npcs=[]
+var movables=[]
 
 func _ready():
 	if (get_tree().is_network_server()):		
@@ -19,8 +19,8 @@ func _ready():
 	player2tex.create_from_image(player2image,0)
 	get_node("Objekte/Player2/Sprite").texture=player2tex
 	for object in get_node("Objekte").get_children():
-		if object.is_in_group("NPC"):
-			npcs.append(object)
+		if object.is_in_group("Movable"):
+			movables.append(object)
 	pass
 
 #func _process(delta):

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/AntenneRotFrame2.png-cc69836817a1347766d6e2bd64248e29.stex"
+path="res://.import/GeneratorFrame4.png-a7afdff492f34aeae010e2efe08aa8e2.stex"
 
 [deps]
 
-source_file="res://Assets/Objekte & Wände/AntenneRotFrame2.png"
-source_md5="093b9c6ac04df5be9458b38017dcc581"
+source_file="res://Assets/Objekte & Wände/GeneratorFrame4.png"
+source_md5="4275d8d2d1b3c33669a73a1f84c46b2e"
 
-dest_files=[ "res://.import/AntenneRotFrame2.png-cc69836817a1347766d6e2bd64248e29.stex" ]
-dest_md5="e2f05cf7398ef4d5f5dc38a5ae477e26"
+dest_files=[ "res://.import/GeneratorFrame4.png-a7afdff492f34aeae010e2efe08aa8e2.stex" ]
+dest_md5="1730e3a1272cf3d12a6f8e80ba5b1c88"
 
 [params]
 
