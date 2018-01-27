@@ -39,14 +39,14 @@ func add_cable(xpos,ypos):
 	if (int(xposmap)%2)==0:
 		cabletopright=find_cable((mappos+Vector2(1,-1)).x,(mappos+Vector2(1,-1)).y)
 		topright_has=cabletopright<0
-		cablebottomright=find_cable((mappos+Vector2(1,0)).x,mappos+Vector2(1,0).y)!=-1
+		cablebottomright=find_cable((mappos+Vector2(1,0)).x,(mappos+Vector2(1,0)).y)!=-1
 		bottomright_has=cablebottomright<0
 		cabletopleft=find_cable((mappos+Vector2(-1,-1)).x,(mappos+Vector2(-1,-1)).y)!=-1
 		topleft_has=cabletopleft<0
 		cablebottomleft=find_cable((mappos+Vector2(-1,0)).x,(mappos+Vector2(-1,0)).y)!=-1
 		bottomleft_has=cablebottomleft<0
 	else:
-		cabletopright=find_cable((mappos+Vector2(1,1)).x,mappos+Vector2(1,1).y)
+		cabletopright=find_cable((mappos+Vector2(1,1)).x,(mappos+Vector2(1,1)).y)
 		topright_has=cabletopright<0
 		cablebottomright=find_cable((mappos+Vector2(1,0)).x,(mappos+Vector2(1,0)).y)!=-1
 		bottomright_has=cablebottomright<0
