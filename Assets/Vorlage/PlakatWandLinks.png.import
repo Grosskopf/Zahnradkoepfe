@@ -10,7 +10,7 @@ source_file="res://Assets/Vorlage/PlakatWandLinks.png"
 source_md5="c03bb4dcfbdc50a49fec7000987e7e6c"
 
 dest_files=[ "res://.import/PlakatWandLinks.png-e4c2424cc4dd24c0988b9e185ab5c03a.stex" ]
-dest_md5="5a50934fd3b29e77d9ccfef210f6b3ad"
+dest_md5="9875c14c843a0e2c839a68a4372d34a1"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -28,5 +28,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

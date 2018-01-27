@@ -7,15 +7,23 @@ var playerrot=0
 var frame=256
 var anim=0
 var moving=false
+var holding=null
 
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
+	print("ready")
 	set_process(true)
 	pass
 slave func movement_added(movement,rotslave,frameslave):
 	move_and_collide(movement)
 	$Sprite.region_rect=Rect2(frameslave,rotslave,64,128)
+	if holding!=null and holding.get_class()=="KinematicBody2D" and not holding.get_groups().empty() and holding.get_groups()[0]=="NPC":
+		holding.move_and_collide(movement)
+		if(moving):
+			holding.get_node("Sprite").region_rect=Rect2(holding.frame,rotslave,64,128)
+		else:
+			holding.get_node("Sprite").region_rect=Rect2(256,rotslave,64,128)
 
 func _process(delta):
 	if (is_network_master()):
@@ -47,9 +55,38 @@ func _process(delta):
 		rpc_unreliable("movement_added",movement,playerrot,frame)
 		$Sprite.region_rect=Rect2(frame,playerrot,64,128)
 		var collisions = move_and_collide(movement)
+		if not holding==null and holding.get_class()=="KinematicBody2D" and not holding.get_groups().empty() and holding.get_groups()[0]=="NPC":
+			holding.move_and_collide(movement)
+			if(moving):
+				holding.get_node("Sprite").region_rect=Rect2(holding.frame,playerrot,64,128)
+			else:
+				holding.get_node("Sprite").region_rect=Rect2(256,playerrot,64,128)
 		
-		if(collisions!=null):
-			print(collisions.collider.get_name())
+		if not Input.is_action_pressed("interact"):
+			holding=null
+		#if(collisions!=null):
+		#	print(collisions.collider.get_name())
+		if(Input.is_action_pressed("interact")):
+			if(playerrot==128):
+				if($RayTop.is_colliding() && not $RayTop.get_collider().get_groups().empty() && $RayTop.get_collider().get_groups()[0]=="NPC"):
+					holding=$RayTop.get_collider()
+					holding.held=true
+					print("yay, touched npc")
+			elif(playerrot==256):
+				if($RayLeft.is_colliding() && not $RayLeft.get_collider().get_groups().empty() && $RayLeft.get_collider().get_groups()[0]=="NPC"):
+					holding=$RayLeft.get_collider()
+					holding.held=true
+					print("yay, touched npc")
+			elif(playerrot==384):
+				if($RayBottom.is_colliding() && not $RayBottom.get_collider().get_groups().empty() && $RayBottom.get_collider().get_groups()[0]=="NPC"):
+					holding=$RayBottom.get_collider()
+					holding.held=true
+					print("yay, touched npc")
+			elif(playerrot==0):
+				if($RayRight.is_colliding() && not $RayRight.get_collider().get_groups().empty() && $RayRight.get_collider().get_groups()[0]=="NPC"):
+					holding=$RayRight.get_collider()
+					holding.held=true
+					print("yay, touched npc")
 		#move_and_collide(movement)
 	#move_and_slide(movement)
 	

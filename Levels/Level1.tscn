@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/LevelControl.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Tilemaps/level.tres" type="TileSet" id=2]
 [ext_resource path="res://Assets/Tilemaps/objects.tres" type="TileSet" id=3]
 [ext_resource path="res://Assets/WandHoch.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Characters/Mainchar.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Characters/NPC.tscn" type="PackedScene" id=6]
 
 [node name="Control" type="Control" index="0"]
 
@@ -85,21 +86,30 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 131081, 2, 0, 196614, 1, 0, 196615, 1, 0, 196616, 2, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 2, 0, 327684, 1, 0, 327697, 4, 0, 393221, 3, 0, 458762, 0, 0, 589834, 0, 0, 589839, 5, 0 )
+tile_data = PoolIntArray( 131081, 2, 0, 196614, 1, 0, 196615, 1, 0, 196616, 2, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 2, 0, 327684, 1, 0, 327697, 4, 0, 393221, 3, 0, 458762, 0, 0, 589827, 7, 0, 589828, 7, 0, 589834, 0, 0, 589839, 5, 0, 655373, 6, 0, 720910, 6, 0 )
 _sections_unfolded = [ "Cell", "Collision", "Transform" ]
 
 [node name="WandHoch" parent="Objekte" index="0" instance=ExtResource( 4 )]
 
 position = Vector2( 448, 360 )
 
-[node name="Player1" parent="Objekte" index="1" instance=ExtResource( 5 )]
+[node name="WandHoch2" parent="Objekte" index="1" instance=ExtResource( 4 )]
+
+position = Vector2( 480, 384 )
+has_plakat = false
+
+[node name="Player1" parent="Objekte" index="2" instance=ExtResource( 5 )]
 
 position = Vector2( 90, 110 )
 _sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
 
-[node name="Player2" parent="Objekte" index="2" instance=ExtResource( 5 )]
+[node name="Player2" parent="Objekte" index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 276, 472 )
 _sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
+
+[node name="NPC" parent="Objekte" index="4" instance=ExtResource( 6 )]
+
+position = Vector2( 646, 462 )
 
 

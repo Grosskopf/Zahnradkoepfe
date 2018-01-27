@@ -10,7 +10,7 @@ source_file="res://Assets/Vorlage/BankRechts.png"
 source_md5="496fa20a196aa763d833d2e95dfe0755"
 
 dest_files=[ "res://.import/BankRechts.png-7bbba0825f067364a9662fcc8607a82b.stex" ]
-dest_md5="496c0d2accb26b557b934792b71bcfd2"
+dest_md5="b19337f4b39b7b640fe4b0dae43f4e30"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -28,5 +28,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
