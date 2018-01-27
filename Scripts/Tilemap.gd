@@ -27,7 +27,7 @@ func _ready():
 func add_cable(xpos,ypos):
 	var mappos=Vector2()
 	mappos=world_to_map(Vector2(xpos,ypos))
-	var xposmap=mappos.x()
+	var xposmap=mappos.x
 	var cabletopright=-1
 	var cablebottomright=-1
 	var cablebottomleft=-1
