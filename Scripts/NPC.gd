@@ -43,7 +43,7 @@ func go(movement):
 func _process(delta):
 	var randright=randf()-0.5
 	var randleft=randf()-0.5
-	print(str(randright)+" / "+str(randleft))
+	#print(str(randright)+" / "+str(randleft))
 	accel=Vector2((randleft),(randright))
 	motion=(accel+motion).normalized()*6
 	if held:

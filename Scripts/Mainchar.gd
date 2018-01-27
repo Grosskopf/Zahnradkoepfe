@@ -57,10 +57,9 @@ func _process(delta):
 		rpc_unreliable("movement_added",movement,playerrot,frame,holding)
 		$Sprite.region_rect=Rect2(frame,playerrot,64,128)
 		var collisions = move_and_collide(movement)
-		movement_player+=movement
-		#if not holding==null and holding.get_class()=="KinematicBody2D" and not holding.get_groups().empty() and holding.get_groups()[0]=="NPC":
-		#	
-		#	#holding.move_and_collide(movement)
+		#movement_player=movement
+		if not holding==null and holding.get_class()=="KinematicBody2D" and not holding.get_groups().empty() and holding.get_groups()[0]=="NPC":
+			holding.motion=movement
 		#	#if(moving):
 		#	#	holding.get_node("Sprite").region_rect=Rect2(holding.frame,playerrot,64,128)
 		#	#else:
