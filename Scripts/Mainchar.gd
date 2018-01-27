@@ -15,15 +15,15 @@ func _ready():
 	print("ready")
 	set_process(true)
 	pass
-slave func movement_added(movement,rotslave,frameslave):
+slave func movement_added(movement,rotslave,frameslave,holding_slave):
 	move_and_collide(movement)
 	$Sprite.region_rect=Rect2(frameslave,rotslave,64,128)
-	if holding!=null and holding.get_class()=="KinematicBody2D" and not holding.get_groups().empty() and holding.get_groups()[0]=="NPC":
-		holding.move_and_collide(movement)
+	if holding_slave!=null and holding_slave.get_class()=="KinematicBody2D" and not holding_slave.get_groups().empty() and holding_slave.get_groups()[0]=="NPC":
+		holding_slave.move_and_collide(movement)
 		if(moving):
-			holding.get_node("Sprite").region_rect=Rect2(holding.frame,rotslave,64,128)
+			holding_slave.get_node("Sprite").region_rect=Rect2(holding_slave.frame,rotslave,64,128)
 		else:
-			holding.get_node("Sprite").region_rect=Rect2(256,rotslave,64,128)
+			holding_slave.get_node("Sprite").region_rect=Rect2(256,rotslave,64,128)
 
 func _process(delta):
 	if (is_network_master()):
@@ -52,7 +52,7 @@ func _process(delta):
 		else:
 			frame=256
 		movement*=delta*5
-		rpc_unreliable("movement_added",movement,playerrot,frame)
+		rpc_unreliable("movement_added",movement,playerrot,frame,holding)
 		$Sprite.region_rect=Rect2(frame,playerrot,64,128)
 		var collisions = move_and_collide(movement)
 		if not holding==null and holding.get_class()=="KinematicBody2D" and not holding.get_groups().empty() and holding.get_groups()[0]=="NPC":
