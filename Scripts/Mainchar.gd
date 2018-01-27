@@ -54,7 +54,7 @@ func _process(delta):
 		else:
 			frame=256
 		movement*=delta*5
-		rpc_unreliable("movement_added",movement,playerrot,frame,holding)
+		rpc_unreliable("movement_added",movement,playerrot,frame)
 		$Sprite.region_rect=Rect2(frame,playerrot,64,128)
 		var collisions = move_and_collide(movement)
 		#movement_player=movement
