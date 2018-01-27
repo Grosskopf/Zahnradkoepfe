@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/EisenEinDrittel.png-dc1a514d6f80ec9d879b04c2fbe0de46.stex"
+
+[deps]
+
+source_file="res://Assets/Objekte & Wände/EisenEinDrittel.png"
+source_md5="2d69d7e0f025b6c4e64bc03cae62439d"
+
+dest_files=[ "res://.import/EisenEinDrittel.png-dc1a514d6f80ec9d879b04c2fbe0de46.stex" ]
+dest_md5="2e8dba96054e7fa7658bf9d59dd792c1"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
