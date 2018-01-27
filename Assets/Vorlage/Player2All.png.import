@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hole_left.png-4f6d91019e6951190a26815a70af8653.stex"
+path="res://.import/Player2All.png-08aa599b6b9c60831c5f0fcbb3b018c5.stex"
 
 [deps]
 
-source_file="res://Assets/Vorlage/hole_left.png"
-source_md5="68530767b64b77af8fbc96a2cb45b5d4"
+source_file="res://Assets/Vorlage/Player2All.png"
+source_md5="35165480fed9b6a231c68d48ef7fddf9"
 
-dest_files=[ "res://.import/hole_left.png-4f6d91019e6951190a26815a70af8653.stex" ]
-dest_md5="457236feae3fa9324e9d6c89c198e954"
+dest_files=[ "res://.import/Player2All.png-08aa599b6b9c60831c5f0fcbb3b018c5.stex" ]
+dest_md5="b1aeb4ab8965eaf19f86d374b60c951b"
 
 [params]
 
@@ -24,7 +24,7 @@ flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true
-process/premult_alpha=false
+process/premult_alpha=true
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0

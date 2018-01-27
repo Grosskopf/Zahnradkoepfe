@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hole_left.png-4f6d91019e6951190a26815a70af8653.stex"
+path="res://.import/Strassenlaterne1.png-285b1b536f6888066648b82559c34e92.stex"
 
 [deps]
 
-source_file="res://Assets/Vorlage/hole_left.png"
-source_md5="68530767b64b77af8fbc96a2cb45b5d4"
+source_file="res://Assets/Vorlage/Strassenlaterne1.png"
+source_md5="baf951b22669bdecae029ef01c42ee14"
 
-dest_files=[ "res://.import/hole_left.png-4f6d91019e6951190a26815a70af8653.stex" ]
-dest_md5="457236feae3fa9324e9d6c89c198e954"
+dest_files=[ "res://.import/Strassenlaterne1.png-285b1b536f6888066648b82559c34e92.stex" ]
+dest_md5="03bd2bf40f0a484bdc81038240ea7501"
 
 [params]
 

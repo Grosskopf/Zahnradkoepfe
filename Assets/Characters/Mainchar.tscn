@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/Mainchar.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Vorlage/PlayerAll.png" type="Texture" id=2]
 
-[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
+[node name="KinematicBody2D" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 3
@@ -23,6 +23,6 @@ _sections_unfolded = [ "Animation", "Material", "Offset", "Pause", "Region", "Tr
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
 
 build_mode = 0
-polygon = PoolVector2Array( 0, 48, -32, 24, 0, 0, 32, 24 )
+polygon = PoolVector2Array( 0, 47, -31, 24, 0, 1, 31, 24 )
 
 

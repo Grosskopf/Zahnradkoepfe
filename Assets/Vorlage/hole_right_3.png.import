@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hole_left.png-4f6d91019e6951190a26815a70af8653.stex"
+path="res://.import/hole_right_3.png-33e143a656c8a40baeb0e96b894d00a5.stex"
 
 [deps]
 
-source_file="res://Assets/Vorlage/hole_left.png"
-source_md5="68530767b64b77af8fbc96a2cb45b5d4"
+source_file="res://Assets/Vorlage/hole_right_3.png"
+source_md5="f0df6c5efd1c053a47961b6cb4a84408"
 
-dest_files=[ "res://.import/hole_left.png-4f6d91019e6951190a26815a70af8653.stex" ]
-dest_md5="457236feae3fa9324e9d6c89c198e954"
+dest_files=[ "res://.import/hole_right_3.png-33e143a656c8a40baeb0e96b894d00a5.stex" ]
+dest_md5="06df7bb797fd15e23f9ee6da076b5ff4"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -28,5 +28,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/LevelControl.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Tilemaps/level.tres" type="TileSet" id=2]
-[ext_resource path="res://Assets/WandHoch.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Characters/Mainchar.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Tilemaps/objects.tres" type="TileSet" id=3]
+[ext_resource path="res://Assets/WandHoch.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Characters/Mainchar.tscn" type="PackedScene" id=5]
 
 [node name="Control" type="Control" index="0"]
 
@@ -43,7 +44,7 @@ format = 1
 tile_data = PoolIntArray( -65527, 1, 0, 65535, 1, 0, 0, 1, 0, 1, 1, 0, 2, 2, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 131071, 1, 0, 65536, 1, 0, 65537, 2, 0, 65538, 2, 0, 65539, 3, 0, 65540, 3, 0, 65541, 3, 0, 65542, 2, 0, 65543, 3, 0, 65544, 2, 0, 65545, 3, 0, 196607, 1, 0, 131072, 2, 0, 131073, 3, 0, 131074, 3, 0, 131075, 4, 0, 131076, 4, 0, 131077, 3, 0, 131078, 3, 0, 131079, 3, 0, 131080, 3, 0, 131081, 4, 0, 131082, 3, 0, 131083, 3, 0, 131084, 3, 0, 131085, 1, 0, 262142, 1, 0, 262143, 1, 0, 196608, 2, 0, 196609, 3, 0, 196610, 4, 0, 196611, 3, 0, 196612, 4, 0, 196613, 3, 0, 196614, 3, 0, 196615, 4, 0, 196616, 4, 0, 196617, 4, 0, 196618, 3, 0, 196619, 3, 0, 196620, 1, 0, 196621, 1, 0, 196622, 1, 0, 196623, 1, 0, 327679, 1, 0, 262144, 2, 0, 262145, 3, 0, 262146, 2, 0, 262147, 3, 0, 262148, 3, 0, 262149, 3, 0, 262150, 3, 0, 262151, 3, 0, 262152, 4, 0, 262153, 4, 0, 262154, 3, 0, 262156, 1, 0, 262158, 1, 0, 262159, 1, 0, 262160, 1, 0, 262161, 1, 0, 393215, 2, 0, 327680, 3, 0, 327681, 3, 0, 327682, 3, 0, 327683, 4, 0, 327684, 3, 0, 327685, 3, 0, 327686, 3, 0, 327687, 4, 0, 327688, 4, 0, 327695, 2, 0, 327696, 1, 0, 327697, 2, 0, 458751, 2, 0, 393216, 2, 0, 393217, 2, 0, 393218, 4, 0, 393220, 4, 0, 393221, 4, 0, 393222, 4, 0, 393227, 4, 0, 393228, 4, 0, 393230, 2, 0, 393231, 2, 0, 393232, 2, 0, 393233, 2, 0, 524287, 2, 0, 458752, 2, 0, 458753, 2, 0, 458754, 4, 0, 458755, 3, 0, 458761, 4, 0, 458762, 4, 0, 458763, 4, 0, 458764, 4, 0, 458766, 2, 0, 458767, 2, 0, 458768, 2, 0, 589823, 2, 0, 524288, 2, 0, 524289, 2, 0, 524290, 2, 0, 524291, 3, 0, 524292, 3, 0, 524293, 3, 0, 524295, 4, 0, 524296, 4, 0, 524297, 4, 0, 524298, 4, 0, 524299, 4, 0, 524300, 4, 0, 524301, 4, 0, 524302, 2, 0, 524303, 2, 0, 589824, 2, 0, 589826, 3, 0, 589827, 3, 0, 589828, 3, 0, 589829, 3, 0, 589830, 3, 0, 589831, 3, 0, 589832, 4, 0, 589833, 4, 0, 589834, 4, 0, 589835, 4, 0, 589836, 4, 0, 655362, 3, 0, 655364, 3, 0, 655365, 3, 0, 655366, 3, 0 )
 _sections_unfolded = [ "Cell", "Collision", "Occluder", "Transform", "Visibility", "Z Index" ]
 
-[node name="Wände" type="TileMap" parent="." index="1"]
+[node name="Löcher" type="TileMap" parent="." index="1"]
 
 position = Vector2( -16, -12 )
 mode = 0
@@ -62,19 +63,41 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 4, 8, 0, 65540, 7, 0, 131080, 5, 0, 196613, 5, 0, 196614, 5, 0, 196615, 5, 0, 262148, 5, 0, 262149, 5, 0, 262150, 5, 0, 262155, 12, 0, 262157, 11, 0, 327684, 5, 0, 327689, 12, 0, 327690, 12, 0, 327691, 12, 0, 327692, 10, 0, 327693, 11, 0, 327694, 11, 0, 393219, 10, 0, 393221, 5, 0, 393223, 12, 0, 393224, 12, 0, 393225, 12, 0, 393226, 12, 0, 458756, 11, 0, 458757, 13, 0, 458758, 12, 0, 458759, 12, 0, 458760, 12, 0, 524294, 12, 0 )
+tile_data = PoolIntArray( 262155, 13, 0, 262157, 12, 0, 327689, 16, 0, 327690, 16, 0, 327691, 17, 0, 327692, 11, 0, 327693, 13, 0, 327694, 14, 0, 393219, 12, 0, 393223, 16, 0, 393224, 16, 0, 393225, 17, 0, 393226, 17, 0, 458756, 14, 0, 458757, 10, 0, 458758, 16, 0, 458759, 17, 0, 458760, 17, 0, 524294, 17, 0 )
 _sections_unfolded = [ "Cell", "Collision", "Transform" ]
 
-[node name="WandHoch" parent="Wände" index="0" instance=ExtResource( 3 )]
+[node name="Objekte" type="TileMap" parent="." index="2"]
+
+position = Vector2( -16, -12 )
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 48 )
+cell_quadrant_size = 1
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 1
+cell_tile_origin = 0
+cell_y_sort = true
+cell_clip_uv = false
+collision_use_kinematic = true
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 131081, 2, 0, 196614, 1, 0, 196615, 1, 0, 196616, 2, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 2, 0, 327684, 1, 0, 327697, 4, 0, 393221, 3, 0, 458762, 0, 0, 589834, 0, 0, 589839, 5, 0 )
+_sections_unfolded = [ "Cell", "Collision", "Transform" ]
+
+[node name="WandHoch" parent="Objekte" index="0" instance=ExtResource( 4 )]
 
 position = Vector2( 448, 360 )
 
-[node name="Player1" parent="Wände" index="1" instance=ExtResource( 4 )]
+[node name="Player1" parent="Objekte" index="1" instance=ExtResource( 5 )]
 
 position = Vector2( 90, 110 )
 _sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
 
-[node name="Player2" parent="Wände" index="2" instance=ExtResource( 4 )]
+[node name="Player2" parent="Objekte" index="2" instance=ExtResource( 5 )]
 
 position = Vector2( 276, 472 )
 _sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]

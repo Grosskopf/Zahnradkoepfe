@@ -1,18 +1,19 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/Vorlage/Boden_Erde.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Vorlage/Boden_Erde2.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Vorlage/Boden_MetallNormal.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Vorlage/Boden_MetallZerkratzt.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Vorlage/Wand_Beton.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Vorlage/WandHinten1.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Vorlage/WandVorne1.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Vorlage/hole.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Vorlage/hole_right.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Vorlage/hole_left.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Vorlage/hole_out.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Vorlage/hole.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Vorlage/hole_2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Vorlage/hole_out.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Vorlage/hole_out_2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Vorlage/hole_left.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Vorlage/hole_left_3.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Vorlage/hole_right.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Vorlage/hole_right_3.png" type="Texture" id=12]
 
-[node name="Node" type="Node"]
+[node name="Node" type="Node" index="0"]
 
 [node name="Boden1" type="Sprite" parent="." index="0"]
 
@@ -30,76 +31,9 @@ texture = ExtResource( 3 )
 
 texture = ExtResource( 4 )
 
-[node name="WandDick" type="Sprite" parent="." index="4"]
+[node name="Hole" type="Sprite" parent="." index="4"]
 
 texture = ExtResource( 5 )
-offset = Vector2( 0, -24 )
-_sections_unfolded = [ "Offset" ]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="WandDick" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-_sections_unfolded = [ "Transform" ]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WandDick/StaticBody2D" index="0"]
-
-build_mode = 0
-polygon = PoolVector2Array( 0, 12, -32, -12, 0, -36, 32, -12 )
-
-[node name="WandHinten" type="Sprite" parent="." index="5"]
-
-texture = ExtResource( 6 )
-offset = Vector2( 0, -24 )
-_sections_unfolded = [ "Offset" ]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="WandHinten" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-_sections_unfolded = [ "Transform" ]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WandHinten/StaticBody2D" index="0"]
-
-build_mode = 0
-polygon = PoolVector2Array( -16, 0, -32, -12, 0, -36, 16, -24 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="WandVorne" type="Sprite" parent="." index="6"]
-
-editor/display_folded = true
-texture = ExtResource( 7 )
-offset = Vector2( 0, -24 )
-_sections_unfolded = [ "Offset" ]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="WandVorne" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WandVorne/StaticBody2D" index="0"]
-
-build_mode = 0
-polygon = PoolVector2Array( 0, 12, -16, 0, 16, -24, 32, -12 )
-
-[node name="Hole" type="Sprite" parent="." index="7"]
-
-texture = ExtResource( 8 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Hole" index="0"]
 
@@ -116,9 +50,9 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( 0, -24, 32, 0, 0, 24, -32, 0 )
 
-[node name="Hole2" type="Sprite" parent="." index="8"]
+[node name="Hole2" type="Sprite" parent="." index="5"]
 
-texture = ExtResource( 9 )
+texture = ExtResource( 6 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Hole2" index="0"]
 
@@ -135,9 +69,9 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( 0, -24, 32, 0, 0, 24, -32, 0 )
 
-[node name="Hole3" type="Sprite" parent="." index="9"]
+[node name="Hole3" type="Sprite" parent="." index="6"]
 
-texture = ExtResource( 10 )
+texture = ExtResource( 7 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Hole3" index="0"]
 
@@ -154,9 +88,9 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( 0, -24, 32, 0, 0, 24, -32, 0 )
 
-[node name="Hole4" type="Sprite" parent="." index="10"]
+[node name="Hole4" type="Sprite" parent="." index="7"]
 
-texture = ExtResource( 11 )
+texture = ExtResource( 8 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Hole4" index="0"]
 
@@ -169,6 +103,82 @@ friction = 1.0
 bounce = 0.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hole4/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0, -24, 32, 0, 0, 24, -32, 0 )
+
+[node name="HoleLeft" type="Sprite" parent="." index="8"]
+
+texture = ExtResource( 9 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="HoleLeft" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HoleLeft/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0, -24, 32, 0, 0, 24, -32, 0 )
+
+[node name="HoleLeft2" type="Sprite" parent="." index="9"]
+
+texture = ExtResource( 10 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="HoleLeft2" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HoleLeft2/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0, -24, 32, 0, 0, 24, -32, 0 )
+
+[node name="HoleRight" type="Sprite" parent="." index="10"]
+
+texture = ExtResource( 11 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="HoleRight" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HoleRight/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0, -24, 32, 0, 0, 24, -32, 0 )
+
+[node name="HoleRight2" type="Sprite" parent="." index="11"]
+
+texture = ExtResource( 12 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="HoleRight2" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HoleRight2/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( 0, -24, 32, 0, 0, 24, -32, 0 )
