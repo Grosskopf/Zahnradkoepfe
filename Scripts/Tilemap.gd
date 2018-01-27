@@ -7,7 +7,7 @@ var animatedtilesarray3=[]
 var animatedtiles3nums=[8,11,14,17,20,23,26,29,32,35,38]
 var frame3=0
 
-var cables=[[]]
+var cables=[]
 var cablesactive=[]
 
 
@@ -38,23 +38,23 @@ func add_cable(xpos,ypos):
 	var topleft_has=false
 	if (int(xposmap)%2)==0:
 		cabletopright=find_cable((mappos+Vector2(1,-1)).x,(mappos+Vector2(1,-1)).y)
-		topright_has=cabletopright<0
+		topright_has=not cabletopright<0
 		cablebottomright=find_cable((mappos+Vector2(1,0)).x,(mappos+Vector2(1,0)).y)
-		bottomright_has=cablebottomright<0
+		bottomright_has=not cablebottomright<0
 		cabletopleft=find_cable((mappos+Vector2(-1,-1)).x,(mappos+Vector2(-1,-1)).y)
-		topleft_has=cabletopleft<0
+		topleft_has=not cabletopleft<0
 		cablebottomleft=find_cable((mappos+Vector2(-1,0)).x,(mappos+Vector2(-1,0)).y)
-		bottomleft_has=cablebottomleft<0
+		bottomleft_has=not cablebottomleft<0
 	else:
-		cabletopright=find_cable((mappos+Vector2(1,1)).x,(mappos+Vector2(1,1)).y)
-		topright_has=cabletopright<0
-		cablebottomright=find_cable((mappos+Vector2(1,0)).x,(mappos+Vector2(1,0)).y)
-		bottomright_has=cablebottomright<0
-		cabletopleft=find_cable((mappos+Vector2(-1,1)).x,(mappos+Vector2(-1,1)).y)
-		topleft_has=cabletopleft<0
-		cablebottomleft=find_cable((mappos+Vector2(-1,0)).x,(mappos+Vector2(-1,0)).y)
-		bottomleft_has=cablebottomleft<0
-	var currenttoset=4
+		cabletopright=find_cable((mappos+Vector2(1,0)).x,(mappos+Vector2(1,0)).y)
+		topright_has=not cabletopright<0
+		cablebottomright=find_cable((mappos+Vector2(1,1)).x,(mappos+Vector2(1,1)).y)
+		bottomright_has=not cablebottomright<0
+		cabletopleft=find_cable((mappos+Vector2(-1,0)).x,(mappos+Vector2(-1,0)).y)
+		topleft_has=not cabletopleft<0
+		cablebottomleft=find_cable((mappos+Vector2(-1,1)).x,(mappos+Vector2(-1,1)).y)
+		bottomleft_has=not cablebottomleft<0
+	var currenttoset=5
 	var cabletoadd=-1
 	if(not topright_has && bottomright_has && bottomleft_has && not topleft_has):
 		currenttoset=0
@@ -81,49 +81,49 @@ func add_cable(xpos,ypos):
 		else:
 			cabletoadd=cabletopleft
 	elif(topright_has && not bottomright_has && bottomleft_has && not topleft_has):
-		currenttoset=4
+		currenttoset=5
 		if(cablebottomleft!=cabletopright):
 			cabletoadd=mergecables(cabletopright,cablebottomleft)
 		else:
 			cabletoadd=cabletopright
 	elif(not topright_has && not bottomright_has && bottomleft_has && not topleft_has):
-		currenttoset=4
+		currenttoset=5
 		cabletoadd=cablebottomleft
 	elif(topright_has && not bottomright_has && not bottomleft_has && not topleft_has):
-		currenttoset=4
+		currenttoset=5
 		cabletoadd=cabletopright
 	elif(not topright_has && bottomright_has && not bottomleft_has && topleft_has):
-		currenttoset=5
+		currenttoset=4
 		if(cablebottomright!=cabletopleft):
 			cabletoadd=mergecables(cabletopleft,cablebottomright)
 		else:
 			cabletoadd=cabletopleft
 	elif(not topright_has && not bottomright_has && not bottomleft_has && topleft_has):
-		currenttoset=5
+		currenttoset=4
 		cabletoadd=cabletopleft
 	elif(not topright_has && bottomright_has && not bottomleft_has && not topleft_has):
-		currenttoset=5
+		currenttoset=4
 		cabletoadd=cablebottomright
 	elif(not topright_has && bottomright_has && bottomleft_has && topleft_has):
-		currenttoset=6
+		currenttoset=9
 		if(cablebottomright!=cablebottomleft or cablebottomright!=cabletopleft):
 			cabletoadd=mergecables(cablebottomleft,cabletopleft,cablebottomright)
 		else:
 			cabletoadd=cabletopleft
 	elif(topright_has && not bottomright_has && bottomleft_has && topleft_has):
-		currenttoset=7
+		currenttoset=8
 		if(cabletopright!=cablebottomleft or cabletopright!=cabletopleft):
 			cabletoadd=mergecables(cablebottomleft,cabletopleft,cabletopright)
 		else:
 			cabletoadd=cabletopleft
 	elif(topright_has && bottomright_has && not bottomleft_has && topleft_has):
-		currenttoset=8
+		currenttoset=7
 		if(cabletopright!=cablebottomright or cabletopright!=cabletopleft):
 			cabletoadd=mergecables(cablebottomright,cabletopleft,cabletopright)
 		else:
 			cabletoadd=cabletopleft
 	elif(topright_has && bottomright_has && bottomleft_has && not topleft_has):
-		currenttoset=9
+		currenttoset=6
 		if(cablebottomright!=cablebottomleft or cablebottomright!=cabletopright):
 			cabletoadd=mergecables(cablebottomleft,cabletopright,cablebottomright)
 		else:
@@ -146,20 +146,21 @@ func add_cable(xpos,ypos):
 			set_cell(mappos.x,mappos.y,41+currenttoset)
 
 func mergecables(cable1,cable2,cable3=-1,cable4=-1):
-	var cablestomerge=[cable1]
+	var cablestomerge=[]
+	cablestomerge.append(cable1)
 	if(cable2>cable1):
-		cablestomerge.push_back(cable2)
+		cablestomerge.append(cable2)
 	else:
-		cablestomerge.push_front(cable2)
+		cablestomerge.append(cable2)
 	if(cable3!=-1 and cable3<cablestomerge[0]):
-		cablestomerge.push_front(cable3)
+		cablestomerge.append(cable3)
 	elif cable3!=-1 and len(cablestomerge)>1 and cable3!=cablestomerge[1]:
-		cablestomerge.push_back(cable3)
+		cablestomerge.append(cable3)
 	if(cable4!=-1 and cable4<cablestomerge[0]):
-		cablestomerge.push_front(cable4)
+		cablestomerge.append(cable4)
 	elif cable4!=-1 and not cablestomerge.has(cable4):
-		cablestomerge.push_back(cable4)
-	cablestomerge=cablestomerge.sort()
+		cablestomerge.append(cable4)
+	cablestomerge.sort()
 	for segment in cables[cablestomerge[1]]:
 		cables[cablestomerge[0]].append(segment)
 	#cables[cablestomerge[0]].push_back(cables[cablestomerge[1]])

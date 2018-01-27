@@ -95,6 +95,7 @@ func _process(delta):
 					print("yay, touched npc")
 		if Input.is_action_pressed("cableadd"):
 			rpc_unreliable("added_cable",position.x,position.y)
+			get_parent().get_parent().get_node("BodenObjekte").add_cable(position.x,position.y)
 		#move_and_collide(movement)
 	#move_and_slide(movement)
 	
