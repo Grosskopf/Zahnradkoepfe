@@ -5,6 +5,7 @@ extends KinematicBody2D
 # var b = "textvar"
 export (bool) var isactive=false
 var motion=Vector2(0,0)
+var held=false
 
 func _ready():
 	# Called every time the node is added to the scene.
