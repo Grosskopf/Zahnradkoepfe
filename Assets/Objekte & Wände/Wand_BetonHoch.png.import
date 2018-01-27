@@ -7,10 +7,10 @@ path="res://.import/Wand_BetonHoch.png-4ec10d550ab7af789679fc47a6c133a8.stex"
 [deps]
 
 source_file="res://Assets/Objekte & Wände/Wand_BetonHoch.png"
-source_md5="617530c61e30921083a429b9ac644661"
+source_md5="eb3eb9a9dea64ed4068590291e963aa7"
 
 dest_files=[ "res://.import/Wand_BetonHoch.png-4ec10d550ab7af789679fc47a6c133a8.stex" ]
-dest_md5="03360b285f6d0c0437e0904087981a21"
+dest_md5="27e03d9f780605093bd305567a3e59a0"
 
 [params]
 

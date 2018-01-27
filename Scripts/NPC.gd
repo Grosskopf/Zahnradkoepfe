@@ -38,7 +38,8 @@ func _process(delta):
 	else: 
 		anim+=delta
 		frame=(int(anim)%4)*64
-		move_and_collide(motion*delta)
+		if not get_tree().is_network_server():
+			move_and_collide(motion*delta)
 		
 		if(motion.x<0 and motion.y<=0):
 			npcrot=128
@@ -48,8 +49,10 @@ func _process(delta):
 			npcrot=384
 		else:
 			npcrot=256
-		rpc_unreliable("movement_added",motion*delta,npcrot,frame)
-		get_node("Sprite").region_rect=Rect2(frame,npcrot,64,128)
+		
+		if not get_tree().is_network_server():
+			rpc_unreliable("movement_added",motion*delta,npcrot,frame)
+			get_node("Sprite").region_rect=Rect2(frame,npcrot,64,128)
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
