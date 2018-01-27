@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/StrassenlaterneKaputt2.png-db0b5b651cd38c2fd2e29e4bec45cb0a.stex"
+
+[deps]
+
+source_file="res://Assets/Objekte & Wände/StrassenlaterneKaputt2.png"
+source_md5="546da024e6d576ea18cbcdcace878f78"
+
+dest_files=[ "res://.import/StrassenlaterneKaputt2.png-db0b5b651cd38c2fd2e29e4bec45cb0a.stex" ]
+dest_md5="97e29513a99b356672b322d0afcf53ad"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

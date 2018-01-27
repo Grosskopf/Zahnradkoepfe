@@ -1,13 +1,16 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Assets/Vorlage/Strassenlaterne1.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Objekte & Wände/Strassenlaterne1.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Vorlage/StrassenlaterneKaputt1.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Vorlage/StrassenlaterneKaputt2.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Vorlage/Wand_Beton.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Vorlage/BankLinks.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Vorlage/BankRechts.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Vorlage/WandHinten1.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Vorlage/WandVorne1.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Objekte & Wände/StrassenlaterneKaputt2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Objekte & Wände/Wand_Beton.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Objekte & Wände/BankLinks.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Objekte & Wände/BankRechts.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Objekte & Wände/WandHinten1.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Objekte & Wände/WandVorne1.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKurveUntenFrame1.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKurveUntenFrame2.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Objekte & Wände/Kabel/KabelAktivKurveUntenFrame3.png" type="Texture" id=11]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -66,7 +69,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Lamp_off2" type="Sprite" parent="." index="2"]
 
-visible = false
 texture = ExtResource( 3 )
 centered = false
 offset = Vector2( 0, -104 )
@@ -160,7 +162,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="WandHinten" type="Sprite" parent="." index="6"]
 
-visible = false
 texture = ExtResource( 7 )
 offset = Vector2( 0, -24 )
 _sections_unfolded = [ "Offset" ]
@@ -184,7 +185,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="WandVorne" type="Sprite" parent="." index="7"]
 
-visible = false
 texture = ExtResource( 8 )
 offset = Vector2( 0, -24 )
 _sections_unfolded = [ "Offset" ]
@@ -203,5 +203,23 @@ bounce = 0.0
 
 build_mode = 0
 polygon = PoolVector2Array( 0, 12, -16, 0, 16, -24, 32, -12 )
+
+[node name="Kurve1" type="Sprite" parent="." index="8"]
+
+texture = ExtResource( 9 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="Kurve2" type="Sprite" parent="." index="9"]
+
+texture = ExtResource( 10 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="Kurve3" type="Sprite" parent="." index="10"]
+
+texture = ExtResource( 11 )
+offset = Vector2( 0, -12 )
+_sections_unfolded = [ "Offset" ]
 
 

@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/KabelAktivKurveUntenFrame1.png-802c254331ff14f34475471642209b38.stex"
+
+[deps]
+
+source_file="res://Assets/Objekte & Wände/Kabel/KabelAktivKurveUntenFrame1.png"
+source_md5="2536cb1b91f542b5ec285fd35242e2be"
+
+dest_files=[ "res://.import/KabelAktivKurveUntenFrame1.png-802c254331ff14f34475471642209b38.stex" ]
+dest_md5="2af03f39a7187760e5b66976541dae72"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

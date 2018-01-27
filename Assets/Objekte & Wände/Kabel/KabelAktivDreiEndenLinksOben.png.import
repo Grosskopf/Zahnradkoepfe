@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/KabelAktivDreiEndenLinksOben.png-6a55926b2ec75cd8d85d93938060b67f.stex"
+
+[deps]
+
+source_file="res://Assets/Objekte & Wände/Kabel/KabelAktivDreiEndenLinksOben.png"
+source_md5="aec0a08b11b3a7c4089b9dbc2c8be139"
+
+dest_files=[ "res://.import/KabelAktivDreiEndenLinksOben.png-6a55926b2ec75cd8d85d93938060b67f.stex" ]
+dest_md5="cbcb1233ff9ab0d778921c7fd8aaad20"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

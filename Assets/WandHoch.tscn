@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Assets/Vorlage/WandHochAlleZustände.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Objekte & Wände/WandHochAlleZustände.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/HideWall.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Vorlage/PlakatWandLinks.png" type="Texture" id=3]
 

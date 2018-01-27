@@ -17,10 +17,10 @@ func _ready():
 	frame=(randi()%4)*64
 	if(randi()%2==1):
 		var npcimage=Image.new()
-		npcimage.load("Assets/Vorlage/NPCFemaleBlueAll.png")
+		npcimage.load("Assets/Characters/NPCFemaleBlueAll.png")
 		var npctex=ImageTexture.new()
 		npctex.create_from_image(npcimage,0)
-		get_node("Sprite").texture=player2tex
+		get_node("Sprite").texture=npctex
 	pass
 
 func _process(delta):

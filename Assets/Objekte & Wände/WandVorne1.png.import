@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/WandVorne1.png-a1a084be0a996a14409a1baacf34dc82.stex"
+
+[deps]
+
+source_file="res://Assets/Objekte & Wände/WandVorne1.png"
+source_md5="55b3607950ca24d2015cbe9ba9016cc4"
+
+dest_files=[ "res://.import/WandVorne1.png-a1a084be0a996a14409a1baacf34dc82.stex" ]
+dest_md5="32adb7b54cb198520415dcb5497ac9fa"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
