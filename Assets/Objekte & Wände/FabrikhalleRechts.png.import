@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/FabrikhalleRechts.png-86ee0bb3225fc051356fd0199a83064b.stex"
+
+[deps]
+
+source_file="res://Assets/Objekte & Wände/FabrikhalleRechts.png"
+source_md5="32b190b6f69e903e5e1c06ceedbc956b"
+
+dest_files=[ "res://.import/FabrikhalleRechts.png-86ee0bb3225fc051356fd0199a83064b.stex" ]
+dest_md5="5d04fc244b649f346fe94a0f2a137b67"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
