@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/AntenneInaktiv.png-dd9cbba21c93aa73b319018934d732f5.stex"
+
+[deps]
+
+source_file="res://Assets/Objekte & Wände/AntenneInaktiv.png"
+source_md5="3aa36955796b6fb4fb81dbf95e371096"
+
+dest_files=[ "res://.import/AntenneInaktiv.png-dd9cbba21c93aa73b319018934d732f5.stex" ]
+dest_md5="65b9a5654066361e12cb87d52523b3fc"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

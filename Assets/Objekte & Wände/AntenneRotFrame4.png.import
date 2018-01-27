@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/AntenneRotFrame4.png-d8b7de99a98130bddb240a7cca762116.stex"
+
+[deps]
+
+source_file="res://Assets/Objekte & Wände/AntenneRotFrame4.png"
+source_md5="28ee70f1a18a94dba117163d37f6ccbb"
+
+dest_files=[ "res://.import/AntenneRotFrame4.png-d8b7de99a98130bddb240a7cca762116.stex" ]
+dest_md5="50d77d291be3a84062e86ec8f86572d8"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

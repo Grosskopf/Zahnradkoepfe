@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/AntennegGruenFrame2.png-5516914bd0af09d37848478346b14527.stex"
+
+[deps]
+
+source_file="res://Assets/Objekte & Wände/AntennegGruenFrame2.png"
+source_md5="df836c506d396b271ad14f06a00bf49f"
+
+dest_files=[ "res://.import/AntennegGruenFrame2.png-5516914bd0af09d37848478346b14527.stex" ]
+dest_md5="6ac929f125c5b4562b13dfa085e06d54"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

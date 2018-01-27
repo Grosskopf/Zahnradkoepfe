@@ -16,9 +16,11 @@ func _ready():
 	print("ready")
 	set_process(true)
 	pass
-slave func movement_added(movement,rotslave,frameslave):
+slave func movement_added(movement,rotslave,frameslave,npcnr):
 	move_and_collide(movement)
 	$Sprite.region_rect=Rect2(frameslave,rotslave,64,128)
+	if(npcnr!=-1):
+		get_parent().get_parent().npcs[npcnr].go(movement)
 	#if holding_slave!=null and holding_slave.get_class()=="KinematicBody2D" and not holding_slave.get_groups().empty() and holding_slave.get_groups()[0]=="NPC":
 	#	holding.motion=movement
 #		holding_slave.move_and_collide(movement)
@@ -26,7 +28,8 @@ slave func movement_added(movement,rotslave,frameslave):
 #			holding_slave.get_node("Sprite").region_rect=Rect2(holding_slave.frame,rotslave,64,128)
 #		else:
 #			holding_slave.get_node("Sprite").region_rect=Rect2(256,rotslave,64,128)
-
+slave func added_cable(posx,posy):
+	get_parent().get_parent().get_node("BodenObjekte").add_cable(posx,posy)
 func _process(delta):
 	if (is_network_master()):
 		$Camera2D.current=true
@@ -54,7 +57,7 @@ func _process(delta):
 		else:
 			frame=256
 		movement*=delta*5
-		rpc_unreliable("movement_added",movement,playerrot,frame)
+		rpc_unreliable("movement_added",movement,playerrot,frame,get_parent().get_parent().npcs.find(holding))
 		$Sprite.region_rect=Rect2(frame,playerrot,64,128)
 		var collisions = move_and_collide(movement)
 		#movement_player=movement
@@ -90,6 +93,8 @@ func _process(delta):
 					holding=$RayRight.get_collider()
 					holding.held=true
 					print("yay, touched npc")
+		if Input.is_action_pressed("cableadd"):
+			rpc_unreliable("added_cable",position.x,position.y)
 		#move_and_collide(movement)
 	#move_and_slide(movement)
 	
