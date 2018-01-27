@@ -20,7 +20,7 @@ animations = [ {
 custom_solver_bias = 0.0
 radius = 50.0
 
-[node name="Kiste" type="KinematicBody2D"]
+[node name="Kiste" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -41,7 +41,7 @@ _sections_unfolded = [ "Offset" ]
 visible = false
 frames = SubResource( 1 )
 animation = "default"
-frame = 2
+frame = 1
 playing = true
 offset = Vector2( 0, -12 )
 _sections_unfolded = [ "Transform" ]
