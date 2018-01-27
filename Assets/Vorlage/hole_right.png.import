@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PlayerLinksHinten.png-4128346d7304a530de5bfa545133c01a.stex"
+path="res://.import/hole_right.png-89c7e8bf233f4f85dc6e8b262da3e95a.stex"
 
 [deps]
 
-source_file="res://Assets/Vorlage/PlayerLinksHinten.png"
-source_md5="9465b2cee9ec36f3b87a876a5bba0214"
+source_file="res://Assets/Vorlage/hole_right.png"
+source_md5="95944d225f5033dc6739097fb87a9d65"
 
-dest_files=[ "res://.import/PlayerLinksHinten.png-4128346d7304a530de5bfa545133c01a.stex" ]
-dest_md5="cbf369885dd93154eb5f75d5279b05d8"
+dest_files=[ "res://.import/hole_right.png-89c7e8bf233f4f85dc6e8b262da3e95a.stex" ]
+dest_md5="5306a2f6d1415ee7a2c734898fc3aaf2"
 
 [params]
 

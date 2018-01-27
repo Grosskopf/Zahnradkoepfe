@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PlayerLinksHinten.png-4128346d7304a530de5bfa545133c01a.stex"
+path="res://.import/WandHochAlleZustände.png-303f23276fcc4f28a393abdbfde025d4.stex"
 
 [deps]
 
-source_file="res://Assets/Vorlage/PlayerLinksHinten.png"
-source_md5="9465b2cee9ec36f3b87a876a5bba0214"
+source_file="res://Assets/Vorlage/WandHochAlleZustände.png"
+source_md5="091a63b175ab4d06ae0379b282ea6e7d"
 
-dest_files=[ "res://.import/PlayerLinksHinten.png-4128346d7304a530de5bfa545133c01a.stex" ]
-dest_md5="cbf369885dd93154eb5f75d5279b05d8"
+dest_files=[ "res://.import/WandHochAlleZustände.png-303f23276fcc4f28a393abdbfde025d4.stex" ]
+dest_md5="513e3cb8a5886779f98131e0c3c4c0dd"
 
 [params]
 

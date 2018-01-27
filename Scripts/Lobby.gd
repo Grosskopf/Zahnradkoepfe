@@ -9,7 +9,7 @@ const DEFAULT_PORT = 8910 # some random number, pick your port properly
 func _player_connected(id):
 	#someone connected, start the game!
 	var Level1 = load("res://Levels/Level1.tscn").instance()
-	Level1.connect("game_finished",self,"_end_game",[],CONNECT_DEFERRED) # connect deferred so we can safely erase it from the callback
+	#Level1.connect("game_finished",self,"_end_game",[],CONNECT_DEFERRED) # connect deferred so we can safely erase it from the callback
 	
 	get_tree().get_root().add_child(Level1)
 	hide()
