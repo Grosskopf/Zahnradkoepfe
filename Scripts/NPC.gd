@@ -22,6 +22,9 @@ func _ready():
 		npctex.create_from_image(npcimage,0)
 		get_node("Sprite").texture=npctex
 	pass
+slave func movement_added(movement,rotslave,frameslave):
+	move_and_collide(movement)
+	$Sprite.region_rect=Rect2(frameslave,rotslave,64,128)
 
 func _process(delta):
 	var randright=randf()-0.5
@@ -36,6 +39,7 @@ func _process(delta):
 		anim+=delta
 		frame=(int(anim)%4)*64
 		move_and_collide(motion*delta)
+		
 		if(motion.x<0 and motion.y<=0):
 			npcrot=128
 		elif(motion.x>=0 and motion.y<=0):
@@ -44,6 +48,7 @@ func _process(delta):
 			npcrot=384
 		else:
 			npcrot=256
+		rpc_unreliable("movement_added",motion*delta,npcrot,frame)
 		get_node("Sprite").region_rect=Rect2(frame,npcrot,64,128)
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.

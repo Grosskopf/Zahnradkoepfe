@@ -47,7 +47,7 @@
 custom_solver_bias = 0.0
 radius = 5.0
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 [node name="Lamp_on" type="Sprite" parent="." index="0"]
 
