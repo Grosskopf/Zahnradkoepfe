@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/KisteFrame2.png-4b6cac470b056d543518b48869eedd42.stex"
+
+[deps]
+
+source_file="res://Assets/Objekte & Wände/KisteFrame2.png"
+source_md5="01e1fa9019a1a35d58f8d3b10307c324"
+
+dest_files=[ "res://.import/KisteFrame2.png-4b6cac470b056d543518b48869eedd42.stex" ]
+dest_md5="7b88e5b07e39802ad4bab6430f126ecd"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
