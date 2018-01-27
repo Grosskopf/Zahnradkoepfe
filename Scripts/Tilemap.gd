@@ -27,6 +27,9 @@ func _ready():
 func add_cable(xpos,ypos):
 	var mappos=Vector2()
 	mappos=world_to_map(Vector2(xpos,ypos))
+	add_cable_intern(mappos)
+
+func add_cable_intern(mappos,is_orig=true):
 	var xposmap=mappos.x
 	var cabletopright=-1
 	var cablebottomright=-1
@@ -105,7 +108,7 @@ func add_cable(xpos,ypos):
 		currenttoset=4
 		cabletoadd=cablebottomright
 	elif(not topright_has && bottomright_has && bottomleft_has && topleft_has):
-		currenttoset=9
+		currenttoset=7
 		if(cablebottomright!=cablebottomleft or cablebottomright!=cabletopleft):
 			cabletoadd=mergecables(cablebottomleft,cabletopleft,cablebottomright)
 		else:
@@ -117,7 +120,7 @@ func add_cable(xpos,ypos):
 		else:
 			cabletoadd=cabletopleft
 	elif(topright_has && bottomright_has && not bottomleft_has && topleft_has):
-		currenttoset=7
+		currenttoset=9
 		if(cabletopright!=cablebottomright or cabletopright!=cabletopleft):
 			cabletoadd=mergecables(cablebottomright,cabletopleft,cabletopright)
 		else:
@@ -144,6 +147,26 @@ func add_cable(xpos,ypos):
 			set_cell(mappos.x,mappos.y,animatedtiles3nums[currenttoset])
 		else:
 			set_cell(mappos.x,mappos.y,41+currenttoset)
+		if(topright_has and is_orig):
+			if(int(xposmap)%2)==0:
+				add_cable_intern(Vector2(mappos.x+1,mappos.y-1),false)
+			else:
+				add_cable_intern(Vector2(mappos.x+1,mappos.y),false)
+		if(bottomright_has and is_orig):
+			if(int(xposmap)%2)==0:
+				add_cable_intern(Vector2(mappos.x+1,mappos.y),false)
+			else:
+				add_cable_intern(Vector2(mappos.x+1,mappos.y+1),false)
+		if(bottomleft_has and is_orig):
+			if(int(xposmap)%2)==0:
+				add_cable_intern(Vector2(mappos.x-1,mappos.y),false)
+			else:
+				add_cable_intern(Vector2(mappos.x-1,mappos.y+1),false)
+		if(topleft_has and is_orig):
+			if(int(xposmap)%2)==0:
+				add_cable_intern(Vector2(mappos.x-1,mappos.y-1),false)
+			else:
+				add_cable_intern(Vector2(mappos.x-1,mappos.y),false)
 
 func mergecables(cable1,cable2,cable3=-1,cable4=-1):
 	var cablestomerge=[]
