@@ -185,7 +185,7 @@ func find_cable(xpos,ypos):
 	for cable in range(len(cables)):
 		for segment in cables[cable]:
 			if(segment[0]==xpos and segment[1]==ypos):
-				return cable
+				return int(cable)
 	return -1
 
 func _on_Timer_timeout():
