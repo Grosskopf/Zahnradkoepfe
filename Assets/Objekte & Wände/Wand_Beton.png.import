@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Wand_Beton.png-b7ad2f920e34fcecd603f692ced25524.stex"
+
+[deps]
+
+source_file="res://Assets/Objekte & Wände/Wand_Beton.png"
+source_md5="2b571a97966f8d67cadb5cf8d4ce17e0"
+
+dest_files=[ "res://.import/Wand_Beton.png-b7ad2f920e34fcecd603f692ced25524.stex" ]
+dest_md5="a02ad14c13c3a896cf93f9acc8ac0982"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

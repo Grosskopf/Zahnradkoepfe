@@ -13,7 +13,7 @@ func _ready():
 		get_node("Objekte/Player2").set_network_master(get_tree().get_network_unique_id())
 		
 	var player2image=Image.new()
-	player2image.load("Assets/Vorlage/Player2All.png")
+	player2image.load("Assets/Characters/Player2All.png")
 	var player2tex=ImageTexture.new()
 	player2tex.create_from_image(player2image,0)
 	get_node("Objekte/Player2/Sprite").texture=player2tex
@@ -21,6 +21,7 @@ func _ready():
 	pass
 
 #func _process(delta):
+#	
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
