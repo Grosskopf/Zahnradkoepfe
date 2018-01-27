@@ -25,7 +25,21 @@ func _ready():
 slave func movement_added(movement,rotslave,frameslave):
 	move_and_collide(movement)
 	$Sprite.region_rect=Rect2(frameslave,rotslave,64,128)
-
+func go(movement):
+	
+	move_and_collide(movement)
+	
+	if(movement.x<0 and movement.y<=0):
+		npcrot=128
+	elif(movement.x>=0 and movement.y<=0):
+		npcrot=0
+	elif(movement.x>=0 and movement.y>0):
+		npcrot=384
+	else:
+		npcrot=256
+	
+	rpc_unreliable("movement_added",movement,npcrot,frame)
+	get_node("Sprite").region_rect=Rect2(frame,npcrot,64,128)
 func _process(delta):
 	var randright=randf()-0.5
 	var randleft=randf()-0.5
@@ -38,21 +52,8 @@ func _process(delta):
 	else: 
 		anim+=delta
 		frame=(int(anim)%4)*64
-		if  get_tree().is_network_server():
-			move_and_collide(motion*delta)
-		
-		if(motion.x<0 and motion.y<=0):
-			npcrot=128
-		elif(motion.x>=0 and motion.y<=0):
-			npcrot=0
-		elif(motion.x>=0 and motion.y>0):
-			npcrot=384
-		else:
-			npcrot=256
-		
-		if get_tree().is_network_server():
-			rpc_unreliable("movement_added",motion*delta,npcrot,frame)
-			get_node("Sprite").region_rect=Rect2(frame,npcrot,64,128)
+	if get_tree().is_network_server():
+		go(motion*delta)
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
