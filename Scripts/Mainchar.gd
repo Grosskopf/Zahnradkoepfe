@@ -27,7 +27,7 @@ slave func movement_added(movement,rotslave,frameslave):
 
 func _process(delta):
 	if (is_network_master()):
-		
+		$Camera2D.current=true
 		var movement=Vector2(0,0)
 		moving=false
 		if(Input.is_action_pressed("walkup")):
