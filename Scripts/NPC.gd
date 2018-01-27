@@ -15,6 +15,12 @@ func _ready():
 	# Initialization here
 	randomize()
 	frame=(randi()%4)*64
+	if(randi()%2==1):
+		var npcimage=Image.new()
+		npcimage.load("Assets/Vorlage/NPCFemaleBlueAll.png")
+		var npctex=ImageTexture.new()
+		npctex.create_from_image(npcimage,0)
+		get_node("Sprite").texture=player2tex
 	pass
 
 func _process(delta):
