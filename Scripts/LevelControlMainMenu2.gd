@@ -18,14 +18,15 @@ var active=true
 func _player_connected(id):
 	#someone connected, start the game!
 	
+	get_tree().change_scene("res://Assets/Gui.tscn")
 	#get_node("Objekte/Player1").set_network_master(null)
-	$Objekte/Player1/Camera2D.current=false
-	$Objekte/Player2/Camera2D.current=false
+	#$Objekte/Player1/Camera2D.current=false
+	#$Objekte/Player2/Camera2D.current=false
 	var Level1 = load("res://Assets/Gui.tscn").instance()
 	#Level1.connect("game_finished",self,"_end_game",[],CONNECT_DEFERRED) # connect deferred so we can safely erase it from the callback
 	#Level1.position=
-	Level1.rect_position=Vector2(0,0)
-	Level1.rect_size=Vector2(1920,1080)
+	#Level1.rect_position=Vector2(0,0)
+	#Level1.rect_size=Vector2(1920,1080)
 	get_tree().get_root().add_child(Level1)
 	active=false
 	hide()
