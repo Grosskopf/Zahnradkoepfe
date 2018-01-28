@@ -17,6 +17,7 @@ var antenneR=[]
 var antenneG=[]
 
 
+
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
@@ -50,6 +51,11 @@ func add_turm(xpos,ypos,p_rot,player1):
 	elif(p_rot==384):
 		towerpos=neighbours[3]
 	add_tower_intern(towerpos,player1)
+	for node_test in get_tree().root.get_children():
+		if(node_test.has_node("Mainwindow")):
+			var towersound = node_test.get_node("Mainwindow").sounds[2].instance()
+			towersound.pos=map_to_world(towerpos)
+			add_child(towersound)
 
 func add_tower_intern(towerpos,player1):
 	#var cablesconnected=remove_cable_intern(generatorpos)
@@ -77,6 +83,11 @@ func add_generator(xpos,ypos,p_rot):
 	elif(p_rot==384):
 		generatorpos=neighbours[3]
 	add_generator_intern(generatorpos)
+	for node_test in get_tree().root.get_children():
+		if(node_test.has_node("Mainwindow")):
+			var generatorsound = node_test.get_node("Mainwindow").sounds[1].instance()
+			generatorsound.pos=map_to_world(generatorpos)
+			add_child(generatorsound)
 
 func add_generator_intern(generatorpos):
 	var cablesconnected=remove_cable_intern(generatorpos)

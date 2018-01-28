@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Mainchar.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Characters/PlayerAll.png" type="Texture" id=2]
+[ext_resource path="res://Sound/AN.ogg" type="AudioStream" id=3]
 
-[node name="KinematicBody2D" type="KinematicBody2D" index="0" groups=[
+[sub_resource type="AudioStreamRandomPitch" id=1]
+
+audio_stream = ExtResource( 3 )
+random_pitch = 1.05
+
+[node name="KinematicBody2D" type="KinematicBody2D" groups=[
 "Player",
 ]]
 
@@ -88,5 +94,13 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="7"]
+
+stream = SubResource( 1 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 
