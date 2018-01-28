@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/QuitButtonAkriv.png-be45ed27330acb53879ffd236d777f06.stex"
+
+[deps]
+
+source_file="res://Assets/Objekte & Wände/QuitButtonAkriv.png"
+source_md5="af656846111a775195dc928407d5e54b"
+
+dest_files=[ "res://.import/QuitButtonAkriv.png-be45ed27330acb53879ffd236d777f06.stex" ]
+dest_md5="eacd92c1c858f727b30d350b9adcacb3"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

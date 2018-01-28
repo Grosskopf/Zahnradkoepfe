@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/ButtonInfo.png-249c6e71d3a0904eecd6a482e2a82d76.stex"
+
+[deps]
+
+source_file="res://Assets/Objekte & Wände/ButtonInfo.png"
+source_md5="0ad1fd3b50472c1bb9ef971db53e382a"
+
+dest_files=[ "res://.import/ButtonInfo.png-249c6e71d3a0904eecd6a482e2a82d76.stex" ]
+dest_md5="b8a1781b36e463c77d20d9d33b2032f8"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
