@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/PlayButtonIAkktiv.png-e84496eb1194139ef4a0e4b71c9e73a8.stex"
+
+[deps]
+
+source_file="res://Assets/Objekte & Wände/PlayButtonIAkktiv.png"
+source_md5="a80d4867138a57d1c891f190db7e2dc3"
+
+dest_files=[ "res://.import/PlayButtonIAkktiv.png-e84496eb1194139ef4a0e4b71c9e73a8.stex" ]
+dest_md5="278e5ae070c98890385907566eceb2af"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

@@ -56,7 +56,20 @@ func _process(delta):
 		frame=(int(anim)%4)*64
 	if get_tree().is_network_server():
 		go(motion*delta)
-	fraction-=5*delta
+	#fraction-=5*delta
+	var bodenObjekte=get_parent().get_parent().get_node("BodenObjekte")
+	for rote_antenne in bodenObjekte.antenneR:
+		if(rote_antenne[2]):
+			var antpos=bodenObjekte.map_to_world(Vector2(rote_antenne[0],rote_antenne[1]))
+			var distAnt=antpos.distance_to(position)
+			if(distAnt<200):
+				fraction+=(200-distAnt)*delta/20
+	for gruene_antenne in bodenObjekte.antenneG:
+		if(gruene_antenne[2]):
+			var antpos=bodenObjekte.map_to_world(Vector2(gruene_antenne[0],gruene_antenne[1]))
+			var distAnt=antpos.distance_to(position)
+			if(distAnt<200):
+				fraction-=(200-distAnt)*delta/20
 	updatefraction()
 
 func updatefraction():
