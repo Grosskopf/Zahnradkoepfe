@@ -9,7 +9,7 @@
 audio_stream = ExtResource( 3 )
 random_pitch = 1.05
 
-[node name="KinematicBody2D" type="KinematicBody2D" groups=[
+[node name="KinematicBody2D" type="KinematicBody2D" index="0" groups=[
 "Player",
 ]]
 
@@ -102,5 +102,14 @@ volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
+
+[node name="Timer" type="Timer" parent="." index="8"]
+
+process_mode = 1
+wait_time = 0.2
+one_shot = true
+autostart = false
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 
