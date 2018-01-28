@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Gui.gd" type="Script" id=1]
-[ext_resource path="res://Levels/Level1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Level2.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/GUI/EisenIconWIP.png" type="Texture" id=3]
 [ext_resource path="res://Assets/GUI/CableIconWIP.png" type="Texture" id=4]
 [ext_resource path="res://Assets/GUI/AntenneIconWIP.png" type="Texture" id=5]
