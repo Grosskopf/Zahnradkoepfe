@@ -10,6 +10,8 @@ var moving=false
 var holding=null
 var movement_player=Vector2(0,0)
 
+export(bool) var isplayerone
+
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
@@ -80,21 +82,27 @@ func _process(delta):
 		#	print(collisions.collider.get_name())
 		if(Input.is_action_pressed("interact")):
 			if(playerrot==128):
-				if($RayTop.is_colliding() && not $RayTop.get_collider().get_groups().empty() && $RayTop.get_collider().get_groups()[0]=="Movable"):
+				if($RayTop.is_colliding() && not $RayTop.get_collider().get_groups().empty() && $RayTop.get_collider().get_groups().has("Movable")):
 					holding=$RayTop.get_collider()
 					holding.held=true
+					#holding=$RayTop.get_collider()
+					#holding.held=true
 			elif(playerrot==256):
-				if($RayLeft.is_colliding() && not $RayLeft.get_collider().get_groups().empty() && $RayLeft.get_collider().get_groups()[0]=="Movable"):
+				if($RayLeft.is_colliding() && not $RayLeft.get_collider().get_groups().empty() && $RayLeft.get_collider().get_groups().has("Movable")):
 					holding=$RayLeft.get_collider()
 					holding.held=true
 			elif(playerrot==384):
-				if($RayBottom.is_colliding() && not $RayBottom.get_collider().get_groups().empty() && $RayBottom.get_collider().get_groups()[0]=="Movable"):
+				if($RayBottom.is_colliding() && not $RayBottom.get_collider().get_groups().empty() && $RayBottom.get_collider().get_groups().has("Movable")):
 					holding=$RayBottom.get_collider()
 					holding.held=true
 			elif(playerrot==0):
-				if($RayRight.is_colliding() && not $RayRight.get_collider().get_groups().empty() && $RayRight.get_collider().get_groups()[0]=="Movable"):
+				if($RayRight.is_colliding() && not $RayRight.get_collider().get_groups().empty() && $RayRight.get_collider().get_groups().has("Movable")):
 					holding=$RayRight.get_collider()
 					holding.held=true
+				elif($RayRight.is_colliding() and $RayRight.get_collider().get_name()=="Fabrikhalle"):
+					if get_tree().root.get_child(0).has_node("ShopWindow")!=null:
+						get_tree().root.get_child(0).get_node("ShopWindow").visible=true
+				
 		if Input.is_action_pressed("cableadd"):
 			rpc_unreliable("added_cable",position.x,position.y)
 			get_parent().get_parent().get_node("BodenObjekte").add_cable(position.x,position.y)

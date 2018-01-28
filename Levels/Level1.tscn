@@ -13,7 +13,7 @@
 [ext_resource path="res://Assets/FabrikhalleRechts.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/Objekte & Wände/Eisenmine.tscn" type="PackedScene" id=12]
 
-[node name="Control" type="Control" index="0"]
+[node name="Control" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -124,11 +124,13 @@ position = Vector2( 480, 384 )
 
 position = Vector2( 32, 192 )
 _sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
+isplayerone = true
 
 [node name="Player2" parent="Objekte" index="3" instance=ExtResource( 6 )]
 
 position = Vector2( 768, 552 )
 _sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
+isplayerone = null
 
 [node name="NPC" parent="Objekte" index="4" instance=ExtResource( 7 )]
 
