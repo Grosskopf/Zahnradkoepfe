@@ -3,6 +3,8 @@ extends Sprite
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
+onready var npcscene = load("res://Assets/Characters/NPC.tscn")
+
 var npccaller=[1,1,2,3,5,8,13,21,34,55]
 var numbercalled=[0,0]
 var calling=[0.0,0.0]
@@ -10,8 +12,17 @@ var calling=[0.0,0.0]
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
+	randomize()
 	pass
 func spawn(player):
+	var npc=npcscene.instance()
+	var positions=[]
+	for object in get_parent().get_children():
+		if object.has_group("SpawnPosition"):
+			positions.append(object.position)
+	if(len(positions)>0):
+		npc.pos=positions[randi()%len(positions)]
+		get_parent().add_child(npc)
 	pass
 func _process(delta):
 	var bodenObjekte=get_parent().get_parent().get_node("BodenObjekte")

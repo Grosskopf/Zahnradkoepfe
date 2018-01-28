@@ -1,6 +1,6 @@
 [gd_scene format=2]
 
-[node name="Spawnpos" type="Position2D" index="0" groups=[
+[node name="Spawnpos" type="Position2D" groups=[
 "SpawnPosition",
 ]]
 

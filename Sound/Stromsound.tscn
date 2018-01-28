@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sound/Strom.ogg" type="AudioStream" id=1]
+
+[sub_resource type="AudioStreamRandomPitch" id=1]
+
+audio_stream = ExtResource( 1 )
+random_pitch = 1.2
+
+[node name="Generatorsound" type="AudioStreamPlayer2D"]
+
+stream = SubResource( 1 )
+volume_db = 0.0
+autoplay = true
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+
