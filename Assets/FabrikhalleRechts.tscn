@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Objekte & Wände/FabrikhalleRechtsTransparent.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/HideFabrik.gd" type="Script" id=2]
+
+[node name="Fabrikhalle" type="Sprite"]
+
+texture = ExtResource( 1 )
+offset = Vector2( 0, -16 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 321, 338 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 32, 156, -160, 12, -32, -72, 160, 60 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Hideobj" type="Area2D" parent="." index="1"]
+
+input_pickable = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+collision_mask = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Hideobj" index="0"]
+
+position = Vector2( 0, -30 )
+build_mode = 0
+polygon = PoolVector2Array( -160, 18, -160, -6, -32, -90, 160, 42, 160, 66, -32, -66 )
+_sections_unfolded = [ "Transform" ]
+
+[connection signal="body_entered" from="Hideobj" to="." method="_on_Hideobj_body_entered"]
+
+[connection signal="body_exited" from="Hideobj" to="." method="_on_Hideobj_body_exited"]
+
+

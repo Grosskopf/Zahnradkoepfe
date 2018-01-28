@@ -3,19 +3,25 @@ extends TileMap
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
-var animatedtilesarray3=[]
-var animatedtiles3nums=[8,11,14,17,20,23,26,29,32,35,38]
+#var animatedtilesarray3=[]
+var animatedtiles3nums=[8,11,14,35,17,20,23,26,29,32,38]
+var magicnumbers=[4,1,2,3,5,6,0,7,8,9,10]
 var frame3=0
+var frame4=0
+var frame4_2=0
 
 var cables=[]
 var cablesactive=[]
+var generators=[]
+var antenneR=[]
+var antenneG=[]
 
 
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-	for animatedtile3num in animatedtiles3nums:
-		animatedtilesarray3.append(get_used_cells_by_id(animatedtile3num))
+	#for animatedtile3num in animatedtiles3nums:
+	#	animatedtilesarray3.append(get_used_cells_by_id(animatedtile3num))
 	
 	pass
 
@@ -28,7 +34,34 @@ func add_cable(xpos,ypos):
 	var mappos=Vector2()
 	mappos=world_to_map(Vector2(xpos,ypos))
 	add_cable_intern(mappos)
+
+func add_turm(xpos,ypos,p_rot,player1):
+	var mappos=Vector2()
+	mappos=world_to_map(Vector2(xpos,ypos))
+	var towerpos=Vector2(0,0)
+	var neighbours=get_neighbours(mappos)
 	
+	if(p_rot==0):
+		towerpos=neighbours[0]
+	elif(p_rot==128):
+		towerpos=neighbours[1]
+	elif(p_rot==256):
+		towerpos=neighbours[2]
+	elif(p_rot==384):
+		towerpos=neighbours[3]
+	add_tower_intern(towerpos,player1)
+
+func add_tower_intern(towerpos,player1):
+	#var cablesconnected=remove_cable_intern(generatorpos)
+	if(player1):
+		set_cell(towerpos.x,towerpos.y,56)
+	else:
+		set_cell(towerpos.x,towerpos.y,60)
+	if(player1):
+		antenneR.append([towerpos.x,towerpos.y,false])
+	else:
+		antenneG.append([towerpos.x,towerpos.y,false])
+
 func add_generator(xpos,ypos,p_rot):
 	var mappos=Vector2()
 	mappos=world_to_map(Vector2(xpos,ypos))
@@ -46,10 +79,13 @@ func add_generator(xpos,ypos,p_rot):
 	add_generator_intern(generatorpos)
 
 func add_generator_intern(generatorpos):
-	var cables=remove_cable_intern(generatorpos)
-	for cable in cables:
+	var cablesconnected=remove_cable_intern(generatorpos)
+	print("cablesconnected:")
+	print(cablesconnected)
+	for cable in cablesconnected:
 		cablesactive[cable]=true
-		set_cell(generatorpos.x,generatorpos.y,-1)#TODO
+		set_cell(generatorpos.x,generatorpos.y,52)
+		generators.append([generatorpos.x,generatorpos.y])
 	pass
 
 func remove_cable_intern(mappos):
@@ -65,53 +101,92 @@ func remove_cable_intern(mappos):
 		if cables[tosplitcable][elementnr][0]==mappos.x and cables[tosplitcable][elementnr][1]==mappos.y:
 			number=elementnr
 	cables[tosplitcable].remove(number)
-	checkarray.remove(number)
-	var neighbours=getneighbours(mappos)
-	for neighbournr in range(4):
-		for elementnr in range(len(checkarray)):
-			if checkarray[elementnr][0]==neighbours[neighbournr][0] and checkarray[elementnr][1]==neighbours[neighbournr][1]:
-				checkarray[elementnr][2]=-(neighbournr+1)
-	var resultarray=get_neighbourspaths(checkarray)
+	#checkarray.remove(number)
+	#var neighbours=get_neighbours(mappos)
+	#for neighbournr in range(4):
+	#	for elementnr in range(len(checkarray)):
+	#		if checkarray[elementnr][0]==neighbours[neighbournr][0] and checkarray[elementnr][1]==neighbours[neighbournr][1]:
+	#			checkarray[elementnr][2]=-(neighbournr+1)
+	#var resultarray=get_neighbourspaths(checkarray)
 	var resultarrayarray=[]
-	var results=[]
-	for elementnr in range(len(resultarray)):
-		var new=false
-		for i in range(len(results)):
-			if resultarray[elementnr][2]==results[i]:
-				new=true
-		if(new):
-			results.append(resultarray[elementnr][2])
-		resultarrayarray[results.find(resultarray[elementnr][2])].append(resultarray[elementnr])
+	for neighbour in get_neighbours(mappos):
+		for element in cables[tosplitcable]:
+			if element[0]==neighbour[0] and element[1]==neighbour[1]:
+				resultarrayarray.append(get_neighbours_check(neighbour))
+	var resultarrayarraycopy=[]
+	for resultarray in resultarrayarray:
+		var has_array=false
+		for resaac in resultarrayarraycopy:
+			has_array= has_array or resaac.has(resultarray[0])
+		#if !resultarrayarraycopy.has(resultarray):
+		if not has_array:
+			resultarrayarraycopy.append(resultarray)
 	var toreturn=[tosplitcable]
-	if(len(resultarrayarray)==2):
-		var j=len(cables[tosplitcable])-1
-		for i in cables[tosplitcable]:
-			for each in resultarrayarray[1]:
-				if cables[tosplitcable][j-i][0]==each[0] and cables[tosplitcable][j-i][1]==each[1]:
-					cables[tosplitcable].remove(j-i)
-		cables.append(resultarrayarray[1])
+	if(len(resultarrayarraycopy)>0):
+		cables[tosplitcable]=resultarrayarraycopy[0]
+	for resultarraynr in range(len(resultarrayarraycopy)-1):
+		cables.append(resultarrayarraycopy[resultarraynr+1])
 		cablesactive.append(false)
 		toreturn.append(len(cables)-1)
-	if(len(resultarrayarray)==3):
-		var j=len(cables[tosplitcable])-1
-		for i in cables[tosplitcable]:
-			for each in resultarrayarray[2]:
-				if cables[tosplitcable][j-i][0]==each[0] and cables[tosplitcable][j-i][1]==each[1]:
-					cables[tosplitcable].remove(j-i)
-		cables.append(resultarrayarray[2])
-		cablesactive.append(false)
-		toreturn.append(len(cables)-1)
-	if(len(resultarrayarray)==4):
-		var j=len(cables[tosplitcable])-1
-		for i in cables[tosplitcable]:
-			for each in resultarrayarray[3]:
-				if cables[tosplitcable][j-i][0]==each[0] and cables[tosplitcable][j-i][1]==each[1]:
-					cables[tosplitcable].remove(j-i)
-		cables.append(resultarrayarray[3])
-		cablesactive.append(false)
-		toreturn.append(len(cables)-1)
+	generator_update()
+	#var results=[]
+#	for elementnr in range(len(resultarray)):
+#		var new=true
+#		for i in range(len(results)):
+#			if resultarray[elementnr][2]==results[i]:
+#				new=false
+#		if(new):
+#			results.append(resultarray[elementnr][2])
+#			resultarrayarray.append([])
+#		resultarrayarray[results.find(resultarray[elementnr][2])].append(resultarray[elementnr])
+#	var toreturn=[tosplitcable]
+#	if(len(resultarrayarray)==2):
+#		var j=len(cables[tosplitcable])-1
+#		var cablesappendix=[]
+#		for i in range(len(cables[tosplitcable])):
+#			for each in resultarrayarray[1]:
+#				if cables[tosplitcable][j-i][0]==each[0] and cables[tosplitcable][j-i][1]==each[1]:
+#					cablesappendix.append(cables[tosplitcable][j-i])
+#					cables[tosplitcable].remove(j-i)
+#					break
+		
+#		cables.append(cablesappendix)
+#		cablesactive.append(false)
+#		toreturn.append(len(cables)-1)
+#	if(len(resultarrayarray)==3):
+#		var j=len(cables[tosplitcable])-1
+#		var cablesappendix=[]
+#		for i in cables[tosplitcable]:
+#			for each in resultarrayarray[2]:
+#				if cables[tosplitcable][j-i][0]==each[0] and cables[tosplitcable][j-i][1]==each[1]:
+#					cablesappendix.append(cables[tosplitcable][j-i])
+#					cables[tosplitcable].remove(j-i)
+#					break
+#		cables.append(cablesappendix)
+#		cablesactive.append(false)
+#		toreturn.append(len(cables)-1)
+#	if(len(resultarrayarray)==4):
+#		var j=len(cables[tosplitcable])-1
+#		var cablesappendix=[]
+#		for i in cables[tosplitcable]:
+#			for each in resultarrayarray[3]:
+#				if cables[tosplitcable][j-i][0]==each[0] and cables[tosplitcable][j-i][1]==each[1]:
+#					cablesappendix.append(cables[tosplitcable][j-i])
+#					cables[tosplitcable].remove(j-i)
+#					break
+#		cables.append(cablesappendix)
+#		cablesactive.append(false)
+#		toreturn.append(len(cables)-1)
 	return toreturn
-	
+
+func generator_update():
+	for i in range(len(cablesactive)):
+		cablesactive[i]=false
+	for gen in generators:
+		for neighbour in get_neighbours(Vector2(gen[0],gen[1])):
+			var cable_temp=find_cable(neighbour.x,neighbour.y)
+			if(cable_temp!=-1):
+				cablesactive[cable_temp]=true
 
 func get_neighbourspaths(checkarray):
 	var foundnr=0
@@ -131,10 +206,24 @@ func get_neighbourspaths(checkarray):
 							elif(nummer>=0):
 								checkarray[elementnr2][2]=-(startnr+1)
 								foundnr+=1
-	if(foundnr>=0):
+	if(foundnr>0):
 		return get_neighbourspaths(checkarray)
 	else:
 		return checkarray
+func get_neighbours_check(mappos, neighbours=[]):
+	var cablenr=find_cable(mappos.x,mappos.y)
+	var candidates=get_neighbours(mappos)
+	for candidate in candidates:
+		for segment in cables[cablenr]:
+			if not neighbours.has(segment):
+				if segment[0]==candidate[0] and segment[1]==candidate[1]:
+					neighbours.append(segment)
+					var toadd=get_neighbours_check(Vector2(candidate[0],candidate[1]),neighbours)
+					for element in toadd:
+						if not neighbours.has(element):
+							neighbours.append(element)
+	return neighbours
+			#neighbous.append()
 
 func get_neighbours(mappos):
 	var outpos=[]
@@ -164,21 +253,21 @@ func add_cable_intern(mappos,is_orig=true):
 	if (int(xposmap)%2)==0:
 		cabletopright=find_cable((mappos+Vector2(1,-1)).x,(mappos+Vector2(1,-1)).y)
 		topright_has=not cabletopright<0
-		cablebottomright=find_cable((mappos+Vector2(1,0)).x,(mappos+Vector2(1,0)).y)
-		bottomright_has=not cablebottomright<0
 		cabletopleft=find_cable((mappos+Vector2(-1,-1)).x,(mappos+Vector2(-1,-1)).y)
 		topleft_has=not cabletopleft<0
 		cablebottomleft=find_cable((mappos+Vector2(-1,0)).x,(mappos+Vector2(-1,0)).y)
 		bottomleft_has=not cablebottomleft<0
+		cablebottomright=find_cable((mappos+Vector2(1,0)).x,(mappos+Vector2(1,0)).y)
+		bottomright_has=not cablebottomright<0
 	else:
 		cabletopright=find_cable((mappos+Vector2(1,0)).x,(mappos+Vector2(1,0)).y)
 		topright_has=not cabletopright<0
-		cablebottomright=find_cable((mappos+Vector2(1,1)).x,(mappos+Vector2(1,1)).y)
-		bottomright_has=not cablebottomright<0
 		cabletopleft=find_cable((mappos+Vector2(-1,0)).x,(mappos+Vector2(-1,0)).y)
 		topleft_has=not cabletopleft<0
 		cablebottomleft=find_cable((mappos+Vector2(-1,1)).x,(mappos+Vector2(-1,1)).y)
 		bottomleft_has=not cablebottomleft<0
+		cablebottomright=find_cable((mappos+Vector2(1,1)).x,(mappos+Vector2(1,1)).y)
+		bottomright_has=not cablebottomright<0
 	var currenttoset=5
 	var cabletoadd=-1
 	if(not topright_has && bottomright_has && bottomleft_has && not topleft_has):
@@ -267,7 +356,7 @@ func add_cable_intern(mappos,is_orig=true):
 		if cablehere==-1:
 			cables[cabletoadd].append([mappos.x,mappos.y,currenttoset])
 		if(cablesactive[cabletoadd]):
-			set_cell(mappos.x,mappos.y,animatedtiles3nums[currenttoset])
+			set_cell(mappos.x,mappos.y,8+3*currenttoset)
 		else:
 			set_cell(mappos.x,mappos.y,41+currenttoset)
 		if(topright_has and is_orig):
@@ -328,6 +417,7 @@ func mergecables(cable1,cable2,cable3=-1,cable4=-1):
 	cablesactive.remove(cablestomerge[1])
 	return cablestomerge[0]
 
+
 func find_cable(xpos,ypos):
 	for cable in range(len(cables)):
 		for segment in cables[cable]:
@@ -337,11 +427,37 @@ func find_cable(xpos,ypos):
 
 func _on_Timer_timeout():
 	frame3=(frame3+1)%3
-	for animatedtilearray3num in range(len(animatedtilesarray3)):
-		for animatedtile in animatedtilesarray3[animatedtilearray3num]:
-			set_cell(animatedtile.x,animatedtile.y,animatedtiles3nums[animatedtilearray3num]+frame3)
+	frame4=(frame4+1)%3
+	if(frame4%3==0):
+		frame4_2=(frame4_2+1)%3
+#	for animatedtilearray3num in range(len(animatedtilesarray3)):
+#		for animatedtile in animatedtilesarray3[animatedtilearray3num]:
+#			set_cell(animatedtile.x,animatedtile.y,animatedtiles3nums[animatedtilearray3num]+frame3)
 	for cablenr in range(len(cablesactive)):
 		if(cablesactive[cablenr]):
 			for animatedtile in cables[cablenr]:
-				set_cell(animatedtile[0],animatedtile[1],animatedtiles3nums[animatedtile[2]]+frame3)
+				var tile=8+animatedtile[2]*3+frame3
+				set_cell(animatedtile[0],animatedtile[1],tile)
+	for generat in range(len(generators)):
+		set_cell(generators[generat][0],generators[generat][1],frame4+52)
+	
+	for ant in range(len(antenneG)):
+		if(find_cable(antenneG[ant][0],antenneG[ant][1])!=-1 and cablesactive[find_cable(antenneG[ant][0],antenneG[ant][1])]):
+			get_parent().get_node("Objekte").set_cell(antenneG[ant][0],antenneG[ant][1],frame4_2+56)
+			antenneG[ant][2]=true
+		else:
+			get_parent().get_node("Objekte").set_cell(antenneG[ant][0],antenneG[ant][1],64)
+			antenneG[ant][2]=false
+	for ant in range(len(antenneR)):
+		if(find_cable(antenneR[ant][0],antenneR[ant][1])!=-1 and cablesactive[find_cable(antenneR[ant][0],antenneR[ant][1])]):
+			get_parent().get_node("Objekte").set_cell(antenneR[ant][0],antenneR[ant][1],frame4_2+60)
+			antenneR[ant][2]=true
+		else:
+			get_parent().get_node("Objekte").set_cell(antenneR[ant][0],antenneR[ant][1],64)
+			antenneR[ant][2]=false
+	
+	pass # replace with function body
+
+
+func _on_Timer2_timeout():
 	pass # replace with function body

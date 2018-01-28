@@ -32,6 +32,8 @@ slave func added_cable(posx,posy):
 	get_parent().get_parent().get_node("BodenObjekte").add_cable(posx,posy)
 slave func added_generator(posx,posy,playerrotat):
 	get_parent().get_parent().get_node("BodenObjekte").add_generator(posx,posy,playerrotat)
+slave func added_turm(posx,posy,playerrotat,player1):
+	get_parent().get_parent().get_node("BodenObjekte").add_generator(posx,posy,playerrotat,player1)
 func _process(delta):
 	if (is_network_master()):
 		$Camera2D.current=true
@@ -99,6 +101,12 @@ func _process(delta):
 		if Input.is_action_pressed("generatoradd"):
 			rpc_unreliable("added_generator",position.x,position.y,playerrot)
 			get_parent().get_parent().get_node("BodenObjekte").add_generator(position.x,position.y,playerrot)
+		if Input.is_action_pressed("turm1add"):
+			rpc_unreliable("added_turm",position.x,position.y,playerrot,true)
+			get_parent().get_parent().get_node("BodenObjekte").add_turm(position.x,position.y,playerrot,true)
+		if Input.is_action_pressed("turm2add"):
+			rpc_unreliable("added_turm",position.x,position.y,playerrot,false)
+			get_parent().get_parent().get_node("BodenObjekte").add_turm(position.x,position.y,playerrot,false)
 		#move_and_collide(movement)
 	#move_and_slide(movement)
 	
