@@ -103,8 +103,12 @@ func _process(delta):
 					for childnodes in get_tree().root.get_children():
 						if(childnodes.has_node("ShopWindow")):
 							childnodes.get_node("ShopWindow").visible=true
-		var playernr=int(get_tree().is_network_server())
+		var playernr=int(not get_tree().is_network_server())
 		if Input.is_action_pressed("cableadd"):
+			print("cableadd")
+			print(playernr)
+			print(global.inventory[playernr])
+			print(checkinzones())
 			if(global.inventory[playernr][0]>0 and not checkinzones()):
 				rpc_unreliable("added_cable",position.x,position.y)
 				get_parent().get_parent().get_node("BodenObjekte").add_cable(position.x,position.y)
