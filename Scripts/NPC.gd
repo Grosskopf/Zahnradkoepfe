@@ -27,6 +27,9 @@ func _ready():
 slave func movement_added(movement,rotslave,frameslave):
 	move_and_collide(movement)
 	$Sprite.region_rect=Rect2(frameslave,rotslave,64,128)
+slave func updatedfraction(movement,rotslave,frameslave):
+	move_and_collide(movement)
+	$Sprite.region_rect=Rect2(frameslave,rotslave,64,128)
 func go(movement):
 	
 	move_and_collide(movement)
@@ -83,24 +86,34 @@ func updatefraction():
 	if(fraction>20):
 		if not global.npcs[0].has(self):
 			global.npcs[0].append(self)
+			#rpc_unreliable("updatedfraction",global.npcs)
 		if global.npcs[1].has(self):
 			global.npcs[1].remove(global.npcs[1].find(self))
+			#rpc_unreliable("updatedfraction",global.npcs)
 		if global.npcs[2].has(self):
 			global.npcs[2].remove(global.npcs[2].find(self))
+			#rpc_unreliable("updatedfraction",global.npcs)
 	elif(fraction<-20):
 		if not global.npcs[1].has(self):
 			global.npcs[1].append(self)
+			#rpc_unreliable("updatedfraction",global.npcs)
 		if global.npcs[0].has(self):
 			global.npcs[0].remove(global.npcs[0].find(self))
+			#rpc_unreliable("updatedfraction",global.npcs)
 		if global.npcs[2].has(self):
 			global.npcs[2].remove(global.npcs[2].find(self))
+			#rpc_unreliable("updatedfraction",global.npcs)
 	else:
 		if not global.npcs[2].has(self):
 			global.npcs[2].append(self)
+			#rpc_unreliable("updatedfraction",global.npcs)
 		if global.npcs[1].has(self):
 			global.npcs[1].remove(global.npcs[1].find(self))
+			#rpc_unreliable("updatedfraction",global.npcs)
 		if global.npcs[0].has(self):
 			global.npcs[0].remove(global.npcs[0].find(self))
+			#rpc_unreliable("updatedfraction",global.npcs)
+	
 
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.

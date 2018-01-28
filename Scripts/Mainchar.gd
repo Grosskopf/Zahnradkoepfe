@@ -103,25 +103,32 @@ func _process(delta):
 					for childnodes in get_tree().root.get_children():
 						if(childnodes.has_node("ShopWindow")):
 							childnodes.get_node("ShopWindow").visible=true
-		var playernr=int(get_tree().is_network_server())
+		var playernr=int(not get_tree().is_network_server())
 		if Input.is_action_pressed("cableadd"):
+			print("cableadd")
+			print(playernr)
+			print(global.inventory[playernr])
+			print(checkinzones())
 			if(global.inventory[playernr][0]>0 and not checkinzones()):
 				rpc_unreliable("added_cable",position.x,position.y)
 				get_parent().get_parent().get_node("BodenObjekte").add_cable(position.x,position.y)
-				global.inventory[int(get_tree().is_network_server())][0]-=1
+				global.inventory[playernr][0]-=1
 				$AudioStreamPlayer.play()
+				$Timer.start()
 		if Input.is_action_pressed("generatoradd"):
-			if(global.inventory[int(get_tree().is_network_server())][1]>0 and not checkinzones()):
+			if(global.inventory[playernr][1]>0 and not checkinzones()):
 				rpc_unreliable("added_generator",position.x,position.y,playerrot)
 				get_parent().get_parent().get_node("BodenObjekte").add_generator(position.x,position.y,playerrot)
-				global.inventory[int(get_tree().is_network_server())][1]-=1
+				global.inventory[playernr][1]-=1
 				$AudioStreamPlayer.play()
+				$Timer.start()
 		if Input.is_action_pressed("turmadd"):
-			if(global.inventory[int(get_tree().is_network_server())][2]>0 and not checkinzones()):
+			if(global.inventory[playernr][2]>0 and not checkinzones()):
 				rpc_unreliable("added_turm",position.x,position.y,playerrot,get_tree().is_network_server())
 				get_parent().get_parent().get_node("BodenObjekte").add_turm(position.x,position.y,playerrot,get_tree().is_network_server())
 				$AudioStreamPlayer.play()
-				global.inventory[int(get_tree().is_network_server())][2]-=1
+				$Timer.start()
+				global.inventory[playernr][2]-=1
 
 func checkinzones():
 	var inzone=false
@@ -134,3 +141,8 @@ func checkinzones():
 						inzone = inzone or object.position.distance_to(position)<100
 	#print(inzone)
 	return inzone
+
+
+func _on_Timer_timeout():
+	$AudioStreamPlayer.stop()
+	pass # replace with function body

@@ -103,4 +103,13 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
+[node name="Timer" type="Timer" parent="." index="8"]
+
+process_mode = 1
+wait_time = 0.2
+one_shot = true
+autostart = false
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
 
