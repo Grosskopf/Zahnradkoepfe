@@ -104,25 +104,21 @@ func _process(delta):
 						if(childnodes.has_node("ShopWindow")):
 							childnodes.get_node("ShopWindow").visible=true
 		var playernr=int(not get_tree().is_network_server())
-		if Input.is_action_pressed("cableadd"):
-			print("cableadd")
-			print(playernr)
-			print(global.inventory[playernr])
-			print(checkinzones())
+		if Input.is_action_just_pressed("cableadd"):
 			if(global.inventory[playernr][0]>0 and not checkinzones()):
 				rpc_unreliable("added_cable",position.x,position.y)
 				get_parent().get_parent().get_node("BodenObjekte").add_cable(position.x,position.y)
 				global.inventory[playernr][0]-=1
 				$AudioStreamPlayer.play()
 				$Timer.start()
-		if Input.is_action_pressed("generatoradd"):
+		if Input.is_action_just_pressed("generatoradd"):
 			if(global.inventory[playernr][1]>0 and not checkinzones()):
 				rpc_unreliable("added_generator",position.x,position.y,playerrot)
 				get_parent().get_parent().get_node("BodenObjekte").add_generator(position.x,position.y,playerrot)
 				global.inventory[playernr][1]-=1
 				$AudioStreamPlayer.play()
 				$Timer.start()
-		if Input.is_action_pressed("turmadd"):
+		if Input.is_action_just_pressed("turmadd"):
 			if(global.inventory[playernr][2]>0 and not checkinzones()):
 				rpc_unreliable("added_turm",position.x,position.y,playerrot,get_tree().is_network_server())
 				get_parent().get_parent().get_node("BodenObjekte").add_turm(position.x,position.y,playerrot,get_tree().is_network_server())
