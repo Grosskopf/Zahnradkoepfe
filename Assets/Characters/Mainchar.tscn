@@ -9,7 +9,7 @@
 audio_stream = ExtResource( 3 )
 random_pitch = 1.05
 
-[node name="KinematicBody2D" type="KinematicBody2D" index="0" groups=[
+[node name="KinematicBody2D" type="KinematicBody2D" groups=[
 "Player",
 ]]
 

@@ -86,33 +86,33 @@ func updatefraction():
 	if(fraction>20):
 		if not global.npcs[0].has(self):
 			global.npcs[0].append(self)
-			rpc_unreliable("updatedfraction",global.npcs)
+			#rpc_unreliable("updatedfraction",global.npcs)
 		if global.npcs[1].has(self):
 			global.npcs[1].remove(global.npcs[1].find(self))
-			rpc_unreliable("updatedfraction",global.npcs)
+			#rpc_unreliable("updatedfraction",global.npcs)
 		if global.npcs[2].has(self):
 			global.npcs[2].remove(global.npcs[2].find(self))
-			rpc_unreliable("updatedfraction",global.npcs)
+			#rpc_unreliable("updatedfraction",global.npcs)
 	elif(fraction<-20):
 		if not global.npcs[1].has(self):
 			global.npcs[1].append(self)
-			rpc_unreliable("updatedfraction",global.npcs)
+			#rpc_unreliable("updatedfraction",global.npcs)
 		if global.npcs[0].has(self):
 			global.npcs[0].remove(global.npcs[0].find(self))
-			rpc_unreliable("updatedfraction",global.npcs)
+			#rpc_unreliable("updatedfraction",global.npcs)
 		if global.npcs[2].has(self):
 			global.npcs[2].remove(global.npcs[2].find(self))
-			rpc_unreliable("updatedfraction",global.npcs)
+			#rpc_unreliable("updatedfraction",global.npcs)
 	else:
 		if not global.npcs[2].has(self):
 			global.npcs[2].append(self)
-			rpc_unreliable("updatedfraction",global.npcs)
+			#rpc_unreliable("updatedfraction",global.npcs)
 		if global.npcs[1].has(self):
 			global.npcs[1].remove(global.npcs[1].find(self))
-			rpc_unreliable("updatedfraction",global.npcs)
+			#rpc_unreliable("updatedfraction",global.npcs)
 		if global.npcs[0].has(self):
 			global.npcs[0].remove(global.npcs[0].find(self))
-			rpc_unreliable("updatedfraction",global.npcs)
+			#rpc_unreliable("updatedfraction",global.npcs)
 	
 
 #	# Called every frame. Delta is time since last frame.
