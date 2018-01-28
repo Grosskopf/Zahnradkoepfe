@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Objekte & Wände/ButtonBack.gd" type="Script" id=1]
-[ext_resource path="res://Assets/GUI/ButtonBackt.png" type="Texture" id=2]
-[ext_resource path="res://Assets/GUI/ButtonBackAktiv.png" type="Texture" id=3]
+[ext_resource path="res://Assets/GUI/PlayButtonInaktiv.png" type="Texture" id=2]
+[ext_resource path="res://Assets/GUI/PlayButtonIAkktiv.png" type="Texture" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -13,7 +13,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Area2D" type="Area2D" index="0"]
+[node name="Area2D" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -32,7 +32,7 @@ animation = "default"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
 
 build_mode = 0
-polygon = PoolVector2Array( 32.6498, 46.4944, -62.9569, -26.2809, -31.3258, -48.8745, 63.5674, 22.9494 )
+polygon = PoolVector2Array( -32.4621, 44.5476, -63.0772, 22.4762, 31.3312, -49.7184, 63.2278, -25.6536 )
 
 [node name="Timer" type="Timer" parent="." index="2"]
 

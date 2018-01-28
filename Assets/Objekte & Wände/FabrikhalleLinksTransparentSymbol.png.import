@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/FabrikhalleLinksTransparentSymbol.png-f38100aa51f3a6dd0f164e3f74997cf8.stex"
+
+[deps]
+
+source_file="res://Assets/Objekte & Wände/FabrikhalleLinksTransparentSymbol.png"
+source_md5="a3791b99a3bb30fb8137e9cf6f882476"
+
+dest_files=[ "res://.import/FabrikhalleLinksTransparentSymbol.png-f38100aa51f3a6dd0f164e3f74997cf8.stex" ]
+dest_md5="2b2d4b169ab6c3475e7eead063084970"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
