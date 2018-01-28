@@ -182,24 +182,35 @@ shadow_atlas_quad_2 = 3
 shadow_atlas_quad_3 = 4
 _sections_unfolded = [ "Rendering" ]
 
-[node name="Label" type="Label" parent="." index="8"]
+[node name="Info" type="RichTextLabel" parent="." index="8"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 470.0
-margin_top = 1250.0
-margin_right = 840.0
-margin_bottom = 1370.0
+margin_left = 270.0
+margin_top = 928.0
+margin_right = 513.0
+margin_bottom = 1011.0
+rect_rotation = -35.9308
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
 percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
+meta_underlined = true
+tab_size = 4
+text = "Lead your own Resistance Inc. Hire Workers with your own Propaganda, gather resources and resist the system faster and more efficiently than your rival"
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Mouse", "Rect", "Size Flags", "Theme", "custom_colors", "custom_constants" ]
 
 [connection signal="body_entered" from="InfoButton" to="InfoButton" method="_on_InfoButton2_body_entered"]
 
