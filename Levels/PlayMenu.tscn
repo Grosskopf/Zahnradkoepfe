@@ -12,7 +12,7 @@
 [ext_resource path="res://Assets/Characters/NPC.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/FabrikhalleRechts.tscn" type="PackedScene" id=11]
 
-[node name="Control" type="Control" index="0"]
+[node name="Control" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0

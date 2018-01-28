@@ -18,7 +18,7 @@ var active=true
 func _player_connected(id):
 	#someone connected, start the game!
 	
-	get_node("Objekte/Player1").set_network_master(null)
+	#get_node("Objekte/Player1").set_network_master(null)
 	$Objekte/Player1/Camera2D.current=false
 	$Objekte/Player2/Camera2D.current=false
 	var Level1 = load("res://Assets/Gui.tscn").instance()
