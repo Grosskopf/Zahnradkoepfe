@@ -6,7 +6,8 @@ extends Control
 var movables=[]
 
 func _ready():
-		pass
+	get_node("Objekte/Player1").set_network_master(get_tree().get_network_unique_id())
+	pass
 
 #func _process(delta):
 #	if get_tree().is_network_server():
@@ -20,3 +21,4 @@ func _ready():
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
+

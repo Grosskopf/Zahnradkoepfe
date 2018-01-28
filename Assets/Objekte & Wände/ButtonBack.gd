@@ -28,5 +28,49 @@ func _on_Area2D_body_exited( body ):
 
 
 func _on_Timer_timeout():
-	#TODO back
+	if(self.name=="InfoButton"):
+		pass
+	if(self.name=="QuitButton"):
+		get_tree().quit()
+		pass
+	if(self.name=="PlayButton"):
+		get_tree().change_scene("res://Levels/PlayMenu.tscn")
+	if(self.name=="JoinButton"):
+		get_parent()._on_Join_pressed()
+	if(self.name=="HostButton"):
+		get_parent()._on_Host_pressed()
+	if(self.name=="BackButton"):
+		if get_parent().active:
+			get_tree().change_scene("res://Levels/MainMenu.tscn")
+	pass # replace with function body
+
+
+
+func _on_InfoButton2_body_entered( body ):
+	_on_Area2D_body_entered(body)
+	pass # replace with function body
+
+
+func _on_InfoButton2_body_exited( body ):
+	_on_Area2D_body_exited(body)
+	pass # replace with function body
+
+
+func _on_QuitButton_body_entered( body ):
+	_on_Area2D_body_entered(body)
+	pass # replace with function body
+
+
+func _on_QuitButton_body_exited( body ):
+	_on_Area2D_body_exited(body)
+	pass # replace with function body
+
+
+func _on_PlayButton_body_entered( body ):
+	_on_Area2D_body_entered(body)
+	pass # replace with function body
+
+
+func _on_PlayButton_body_exited( body ):
+	_on_Area2D_body_exited(body)
 	pass # replace with function body

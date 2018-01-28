@@ -1,21 +1,21 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://Scripts/LevelControl.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/LevelControlMainMenu2.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Tilemaps/level.tres" type="TileSet" id=2]
 [ext_resource path="res://Assets/Tilemaps/objects.tres" type="TileSet" id=3]
 [ext_resource path="res://Scripts/Tilemap.gd" type="Script" id=4]
-[ext_resource path="res://Assets/WandHoch.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Characters/Mainchar.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Characters/NPC.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Assets/Fabrikhalle.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Assets/Objekte & Wände/NPCStadt.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Assets/FabrikhalleRechts.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Assets/Objekte & Wände/Eisenmine.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Assets/GUI/Fertig/ButtonInfo.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Assets/GUI/Fertig/ButtonQuit.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Assets/GUI/Fertig/ButtonPlay.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Assets/GUI/Fertig/ButtonInfo.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/GUI/Fertig/ButtonQuit.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/GUI/Fertig/ButtonPlay.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/WandHoch.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Characters/Mainchar.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Characters/NPC.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Fabrikhalle.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Objekte & Wände/NPCStadt.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/FabrikhalleRechts.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Assets/Objekte & Wände/Eisenmine.tscn" type="PackedScene" id=14]
 
-[node name="Control" type="Control" index="0"]
+[node name="Control" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -72,7 +72,19 @@ tile_data = PoolIntArray( 327685, 3, 0, 327686, 3, 0, 327687, 3, 0, 393219, 3, 0
 script = ExtResource( 4 )
 _sections_unfolded = [ "Cell", "Collision", "Occluder", "Transform", "Visibility", "Z Index" ]
 
-[node name="Objekte" type="TileMap" parent="." index="2"]
+[node name="InfoButton" parent="." index="2" instance=ExtResource( 5 )]
+
+position = Vector2( 530.128, 1179.04 )
+
+[node name="QuitButton" parent="." index="3" instance=ExtResource( 6 )]
+
+position = Vector2( 623.588, 1252.26 )
+
+[node name="PlayButton" parent="." index="4" instance=ExtResource( 7 )]
+
+position = Vector2( 465.845, 1130.58 )
+
+[node name="Objekte" type="TileMap" parent="." index="5"]
 
 mode = 0
 tile_set = ExtResource( 3 )
@@ -93,67 +105,55 @@ format = 1
 tile_data = PoolIntArray( 393224, 65, 0, 458758, 65, 0, 524301, 65, 0, 1048609, 65, 0, 1114135, 64, 0, 1114147, 65, 0, 1245169, 64, 0, 1310741, 4, 0, 1441817, 4, 0, 1507357, 4, 0, 1638400, 64, 0, 1769480, 4, 0, 1900556, 4, 0, 1966089, 64, 0, 2031632, 4, 0 )
 _sections_unfolded = [ "Cell", "Collision", "Material", "Transform" ]
 
-[node name="WandHoch" parent="Objekte" index="0" instance=ExtResource( 5 )]
+[node name="WandHoch" parent="Objekte" index="0" instance=ExtResource( 8 )]
 
 position = Vector2( 450.721, 1693.17 )
 
-[node name="WandHoch2" parent="Objekte" index="1" instance=ExtResource( 5 )]
+[node name="WandHoch2" parent="Objekte" index="1" instance=ExtResource( 8 )]
 
 position = Vector2( 926.406, 1198.29 )
 
-[node name="Player2" parent="Objekte" index="2" instance=ExtResource( 6 )]
+[node name="Player2" parent="Objekte" index="2" instance=ExtResource( 9 )]
 
-position = Vector2( 733.602, 1368.54 )
+position = Vector2( -280, 660 )
 
-[node name="Player1" parent="Objekte" index="3" instance=ExtResource( 6 )]
+[node name="Player1" parent="Objekte" index="3" instance=ExtResource( 9 )]
 
-position = Vector2( 733.602, 1368.54 )
+position = Vector2( 770, 1360 )
 _sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
 isplayerone = true
 
-[node name="NPC" parent="Objekte" index="4" instance=ExtResource( 7 )]
+[node name="NPC" parent="Objekte" index="4" instance=ExtResource( 10 )]
 
 position = Vector2( 773.292, 1123.08 )
 
-[node name="Fabrikhalle" parent="Objekte" index="5" instance=ExtResource( 8 )]
+[node name="Fabrikhalle" parent="Objekte" index="5" instance=ExtResource( 11 )]
 
 position = Vector2( 609.66, 682.924 )
 
-[node name="NPC_Dorf" parent="Objekte" index="6" instance=ExtResource( 9 )]
+[node name="NPC_Dorf" parent="Objekte" index="6" instance=ExtResource( 12 )]
 
-position = Vector2( 94.653, 837.076 )
+position = Vector2( 130.653, 837.076 )
 
-[node name="Fabrikhalle2" parent="Objekte" index="7" instance=ExtResource( 10 )]
+[node name="Fabrikhalle2" parent="Objekte" index="7" instance=ExtResource( 13 )]
 
 position = Vector2( 1056.6, 1016.18 )
 
-[node name="Area2D" parent="Objekte" index="8" instance=ExtResource( 11 )]
+[node name="Area2D" parent="Objekte" index="8" instance=ExtResource( 14 )]
 
 position = Vector2( -126.549, 1179.15 )
 
-[node name="InfoButton2" parent="Objekte" index="9" instance=ExtResource( 12 )]
+[node name="Area2D2" parent="Objekte" index="9" instance=ExtResource( 14 )]
 
-position = Vector2( 530.128, 1179.04 )
-
-[node name="QuitButton" parent="Objekte" index="10" instance=ExtResource( 13 )]
-
-position = Vector2( 623.588, 1252.26 )
-
-[node name="PlayButton" parent="Objekte" index="11" instance=ExtResource( 14 )]
-
-position = Vector2( 465.845, 1130.58 )
-
-[node name="Area2D2" parent="Objekte" index="12" instance=ExtResource( 11 )]
-
-[node name="Timer" type="Timer" parent="." index="3"]
+[node name="Timer" type="Timer" parent="." index="6"]
 
 process_mode = 1
-wait_time = 0.1
+wait_time = 1.0
 one_shot = false
 autostart = true
 _sections_unfolded = [ "Pause" ]
 
-[node name="Viewport" type="Viewport" parent="." index="4"]
+[node name="Viewport" type="Viewport" parent="." index="7"]
 
 arvr = false
 size = Vector2( 0, 0 )
@@ -179,6 +179,18 @@ shadow_atlas_quad_1 = 2
 shadow_atlas_quad_2 = 3
 shadow_atlas_quad_3 = 4
 _sections_unfolded = [ "Rendering" ]
+
+[connection signal="body_entered" from="InfoButton" to="InfoButton" method="_on_InfoButton2_body_entered"]
+
+[connection signal="body_exited" from="InfoButton" to="InfoButton" method="_on_InfoButton2_body_exited"]
+
+[connection signal="body_entered" from="QuitButton" to="QuitButton" method="_on_QuitButton_body_entered"]
+
+[connection signal="body_exited" from="QuitButton" to="QuitButton" method="_on_QuitButton_body_exited"]
+
+[connection signal="body_entered" from="PlayButton" to="PlayButton" method="_on_PlayButton_body_entered"]
+
+[connection signal="body_exited" from="PlayButton" to="PlayButton" method="_on_PlayButton_body_exited"]
 
 [connection signal="timeout" from="Timer" to="BodenObjekte" method="_on_Timer_timeout"]
 
