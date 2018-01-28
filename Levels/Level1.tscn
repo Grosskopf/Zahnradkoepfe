@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/LevelControl.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Tilemaps/level.tres" type="TileSet" id=2]
@@ -11,17 +11,14 @@
 [ext_resource path="res://Assets/Box.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Objekte & Wände/NPCStadt.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/FabrikhalleRechts.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Objekte & Wände/Eisenmine.tscn" type="PackedScene" id=12]
 
-[node name="Control" type="Control" index="0"]
+[node name="Control" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -120.0
-margin_top = 160.0
-margin_right = 1800.0
-margin_bottom = 1240.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -155,6 +152,10 @@ position = Vector2( 896, -336 )
 
 position = Vector2( 32, -288 )
 
+[node name="Area2D" parent="Objekte" index="9" instance=ExtResource( 12 )]
+
+position = Vector2( 904, 256 )
+
 [node name="Timer" type="Timer" parent="." index="4"]
 
 process_mode = 1
@@ -162,6 +163,33 @@ wait_time = 0.1
 one_shot = false
 autostart = true
 _sections_unfolded = [ "Pause" ]
+
+[node name="Viewport" type="Viewport" parent="." index="5"]
+
+arvr = false
+size = Vector2( 0, 0 )
+own_world = false
+world = null
+transparent_bg = false
+msaa = 0
+hdr = true
+disable_3d = false
+usage = 2
+debug_draw = 0
+render_target_v_flip = false
+render_target_clear_mode = 0
+render_target_update_mode = 2
+audio_listener_enable_2d = false
+audio_listener_enable_3d = false
+physics_object_picking = false
+gui_disable_input = false
+gui_snap_controls_to_pixels = true
+shadow_atlas_size = 0
+shadow_atlas_quad_0 = 2
+shadow_atlas_quad_1 = 2
+shadow_atlas_quad_2 = 3
+shadow_atlas_quad_3 = 4
+_sections_unfolded = [ "Rendering" ]
 
 [connection signal="timeout" from="Timer" to="BodenObjekte" method="_on_Timer_timeout"]
 
