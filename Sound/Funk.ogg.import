@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Funk.ogg-d33c2097ccaac04de31f49e7c57fe8cd.oggstr"
+
+[deps]
+
+source_file="res://Sound/Funk.ogg"
+source_md5="49b9d526b7c74c2f9220bdd64f6a10ac"
+
+dest_files=[ "res://.import/Funk.ogg-d33c2097ccaac04de31f49e7c57fe8cd.oggstr" ]
+dest_md5="36d6fa75591288b1453ca4e10c3e89f1"
+
+[params]
+
+loop=true
+loop_offset=0

@@ -4,7 +4,7 @@ extends Node
 # var a = 2
 # var b = "textvar"
 var npcs=[[],[],[]]
-var resources=[0,0]
+var resources=[300,300]
 var inventory=[[0,0,0],[0,0,0]]#Kabel, Generatoren, Funktürme
 
 func _ready():

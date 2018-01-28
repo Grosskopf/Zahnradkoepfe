@@ -105,20 +105,28 @@ func _process(delta):
 							childnodes.get_node("ShopWindow").visible=true
 				
 		if Input.is_action_pressed("cableadd"):
-			rpc_unreliable("added_cable",position.x,position.y)
-			get_parent().get_parent().get_node("BodenObjekte").add_cable(position.x,position.y)
+			if(global.inventory[int(get_tree().is_network_server())][0]>0):
+				rpc_unreliable("added_cable",position.x,position.y)
+				get_parent().get_parent().get_node("BodenObjekte").add_cable(position.x,position.y)
+				global.inventory[int(get_tree().is_network_server())][0]-=1
 		if Input.is_action_pressed("generatoradd"):
-			rpc_unreliable("added_generator",position.x,position.y,playerrot)
-			get_parent().get_parent().get_node("BodenObjekte").add_generator(position.x,position.y,playerrot)
-		if Input.is_action_pressed("turm1add"):
-			rpc_unreliable("added_turm",position.x,position.y,playerrot,true)
-			get_parent().get_parent().get_node("BodenObjekte").add_turm(position.x,position.y,playerrot,true)
-		if Input.is_action_pressed("turm2add"):
-			rpc_unreliable("added_turm",position.x,position.y,playerrot,false)
-			get_parent().get_parent().get_node("BodenObjekte").add_turm(position.x,position.y,playerrot,false)
-		#move_and_collide(movement)
-	#move_and_slide(movement)
-	
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+			if(global.inventory[int(get_tree().is_network_server())][1]>0):
+				rpc_unreliable("added_generator",position.x,position.y,playerrot)
+				get_parent().get_parent().get_node("BodenObjekte").add_generator(position.x,position.y,playerrot)
+				global.inventory[int(get_tree().is_network_server())][1]-=1
+		if Input.is_action_pressed("turmadd"):
+			if(global.inventory[int(get_tree().is_network_server())][2]>0):
+				rpc_unreliable("added_turm",position.x,position.y,playerrot,get_tree().is_network_server())
+				get_parent().get_parent().get_node("BodenObjekte").add_turm(position.x,position.y,playerrot,get_tree().is_network_server())
+				global.inventory[int(get_tree().is_network_server())][2]-=1
+
+func checkinzones():
+	var inzone=false
+	for child in get_tree().root.get_children():
+		if has_node("Mainwindow"):
+			level=get_node("Mainwindow/ViewportContainer/Viewport/Control/")
+			if( level.has_node("Objekte")):
+				for objekt in level.get_node("Objekte").get_children():
+					if object.has_group("SpawnPosition"):
+						inzone = inzone or object.position.distance_to(position)<100
+	return inzone

@@ -13,9 +13,16 @@ func _process(delta):
 	$Player1/ProgressBar.value=len(global.npcs[0])
 	$Player2/ProgressBar.value=len(global.npcs[1])
 	if(get_tree().is_network_server()):
-		$Resources/Label.text=str(global.resources[0])
+		$Resources/Label.text=str(int(global.resources[0]))
+		$Inventory/Cables.text=str(global.inventory[0][0])
+		$Inventory/Cables2.text=str(global.inventory[0][1])
+		$Inventory/Cables3.text=str(global.inventory[0][2])
 	else:
-		$Resources/Label.text=str(global.resources[1])
+		$Resources/Label.text=str(int(global.resources[1]))
+		$Inventory/Cables.text=str(global.inventory[1][0])
+		$Inventory/Cables2.text=str(global.inventory[1][1])
+		$Inventory/Cables3.text=str(global.inventory[1][2])
+	
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
