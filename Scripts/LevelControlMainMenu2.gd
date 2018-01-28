@@ -22,7 +22,7 @@ func _player_connected(id):
 	#get_node("Objekte/Player1").set_network_master(null)
 	#$Objekte/Player1/Camera2D.current=false
 	#$Objekte/Player2/Camera2D.current=false
-	get_node(Objekte).free()
+	get_node("Objekte").free()
 	var Level1 = load("res://Assets/Gui.tscn").instance()
 	#Level1.connect("game_finished",self,"_end_game",[],CONNECT_DEFERRED) # connect deferred so we can safely erase it from the callback
 	#Level1.position=
