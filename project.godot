@@ -14,6 +14,10 @@ config/name="Zahnradköpfe"
 run/main_scene="res://Lobby.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+global="*res://Scripts/global.gd"
+
 [display]
 
 window/size/width=1920

@@ -80,6 +80,27 @@ func updatefraction():
 		colormod=Color(1.0+0.01*fraction,1.0,1.0+0.01*fraction,1.0)
 	$HSlider.modulate=colormod
 	$HSlider.value=fraction
+	if(fraction>20):
+		if not global.npcs[0].has(self):
+			global.npcs[0].append(self)
+		if global.npcs[1].has(self):
+			global.npcs[1].remove(global.npcs[1].find(self))
+		if global.npcs[2].has(self):
+			global.npcs[2].remove(global.npcs[2].find(self))
+	elif(fraction<-20):
+		if not global.npcs[1].has(self):
+			global.npcs[1].append(self)
+		if global.npcs[0].has(self):
+			global.npcs[0].remove(global.npcs[0].find(self))
+		if global.npcs[2].has(self):
+			global.npcs[2].remove(global.npcs[2].find(self))
+	else:
+		if not global.npcs[2].has(self):
+			global.npcs[2].append(self)
+		if global.npcs[1].has(self):
+			global.npcs[1].remove(global.npcs[1].find(self))
+		if global.npcs[0].has(self):
+			global.npcs[0].remove(global.npcs[0].find(self))
 
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
