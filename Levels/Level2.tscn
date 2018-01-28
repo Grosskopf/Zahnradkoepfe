@@ -1,0 +1,198 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scripts/LevelControl.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Tilemaps/level.tres" type="TileSet" id=2]
+[ext_resource path="res://Assets/Tilemaps/objects.tres" type="TileSet" id=3]
+[ext_resource path="res://Scripts/Tilemap.gd" type="Script" id=4]
+[ext_resource path="res://Assets/WandHoch.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Characters/Mainchar.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Characters/NPC.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Fabrikhalle.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Box.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Objekte & Wände/NPCStadt.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/FabrikhalleRechts.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Objekte & Wände/Eisenmine.tscn" type="PackedScene" id=12]
+
+[node name="Control" type="Control"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 1 )
+_sections_unfolded = [ "Anchor", "Margin" ]
+
+[node name="Löcher" type="TileMap" parent="." index="0"]
+
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 48 )
+cell_quadrant_size = 1
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 1
+cell_tile_origin = 0
+cell_y_sort = true
+cell_clip_uv = false
+collision_use_kinematic = true
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 262152, 0, 0, 262155, 5, 0, 262157, 5, 0, 327689, 7, 0, 327690, 7, 0, 327691, 8, 0, 327692, 4, 0, 327693, 8, 0, 327694, 6, 0, 393219, 5, 0, 393223, 7, 0, 393224, 7, 0, 393225, 8, 0, 393226, 8, 0, 458756, 6, 0, 458757, 10, 0, 458758, 7, 0, 458759, 8, 0, 458760, 8, 0, 524294, 8, 0 )
+_sections_unfolded = [ "Cell", "Collision", "Transform" ]
+
+[node name="Boden" type="TileMap" parent="." index="1"]
+
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 48 )
+cell_quadrant_size = 1
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 1
+cell_tile_origin = 0
+cell_y_sort = true
+cell_clip_uv = false
+collision_use_kinematic = true
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -65527, 1, 0, 65535, 1, 0, 0, 1, 0, 1, 1, 0, 2, 2, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 131071, 1, 0, 65536, 1, 0, 65537, 2, 0, 65538, 2, 0, 65539, 3, 0, 65540, 3, 0, 65541, 0, 0, 65542, 2, 0, 65543, 3, 0, 65544, 2, 0, 65545, 3, 0, 196607, 1, 0, 131072, 2, 0, 131073, 3, 0, 131074, 3, 0, 131075, 0, 0, 131076, 0, 0, 131077, 1, 0, 131078, 3, 0, 131079, 3, 0, 131080, 3, 0, 131081, 0, 0, 131082, 3, 0, 131083, 3, 0, 131084, 3, 0, 131085, 1, 0, 262142, 1, 0, 262143, 1, 0, 196608, 2, 0, 196609, 3, 0, 196610, 0, 0, 196611, 3, 0, 196612, 1, 0, 196613, 3, 0, 196614, 3, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 3, 0, 196620, 1, 0, 196621, 1, 0, 196622, 1, 0, 196623, 1, 0, 327679, 1, 0, 262144, 2, 0, 262145, 3, 0, 262146, 2, 0, 262147, 3, 0, 262148, 3, 0, 262149, 3, 0, 262150, 3, 0, 262151, 3, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262156, 1, 0, 262158, 1, 0, 262159, 1, 0, 262160, 1, 0, 262161, 1, 0, 393215, 2, 0, 327680, 3, 0, 327681, 3, 0, 327682, 3, 0, 327683, 0, 0, 327684, 3, 0, 327685, 3, 0, 327686, 3, 0, 327687, 0, 0, 327688, 0, 0, 327689, 10, 0, 327690, 10, 0, 327691, 11, 0, 327695, 2, 0, 327696, 1, 0, 327697, 2, 0, 458751, 2, 0, 393216, 2, 0, 393217, 2, 0, 393218, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 10, 0, 393224, 10, 0, 393225, 11, 0, 393226, 11, 0, 393227, 3, 0, 393228, 3, 0, 393229, 3, 0, 393230, 2, 0, 393231, 2, 0, 393232, 2, 0, 393233, 2, 0, 524287, 2, 0, 458752, 2, 0, 458753, 2, 0, 458754, 0, 0, 458755, 3, 0, 458757, 4, 0, 458758, 10, 0, 458759, 11, 0, 458760, 11, 0, 458761, 3, 0, 458762, 4, 0, 458763, 3, 0, 458764, 3, 0, 458766, 2, 0, 458767, 2, 0, 458768, 2, 0, 589823, 2, 0, 524288, 2, 0, 524289, 2, 0, 524290, 2, 0, 524291, 3, 0, 524292, 3, 0, 524293, 3, 0, 524294, 11, 0, 524295, 3, 0, 524296, 3, 0, 524297, 3, 0, 524298, 3, 0, 524299, 3, 0, 524300, 3, 0, 524301, 3, 0, 524302, 2, 0, 524303, 2, 0, 589824, 2, 0, 589826, 3, 0, 589827, 3, 0, 589828, 3, 0, 589829, 3, 0, 589830, 3, 0, 589831, 3, 0, 589832, 3, 0, 589833, 3, 0, 589834, 3, 0, 589835, 3, 0, 589836, 3, 0, 655362, 3, 0, 655364, 3, 0, 655365, 3, 0, 655366, 3, 0 )
+_sections_unfolded = [ "Cell", "Collision", "Occluder", "Transform", "Visibility", "Z Index" ]
+
+[node name="BodenObjekte" type="TileMap" parent="." index="2"]
+
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 48 )
+cell_quadrant_size = 1
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 1
+cell_tile_origin = 0
+cell_y_sort = true
+cell_clip_uv = false
+collision_use_kinematic = true
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray(  )
+script = ExtResource( 4 )
+_sections_unfolded = [ "Cell", "Collision", "Occluder", "Transform", "Visibility", "Z Index" ]
+
+[node name="Objekte" type="TileMap" parent="." index="3"]
+
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 48 )
+cell_quadrant_size = 1
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 1
+cell_tile_origin = 0
+cell_y_sort = true
+cell_clip_uv = false
+collision_use_kinematic = true
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 131081, 6, 0, 196614, 3, 0, 196615, 3, 0, 196616, 7, 0, 262148, 3, 0, 262149, 3, 0, 262150, 3, 0, 262151, 6, 0, 327684, 3, 0, 327697, 4, 0, 393221, 5, 0, 458762, 0, 0, 589827, 7, 0, 589828, 7, 0, 589834, 0, 0, 589839, 5, 0, 655373, 6, 0 )
+_sections_unfolded = [ "Cell", "Collision", "Material", "Transform" ]
+
+[node name="WandHoch" parent="Objekte" index="0" instance=ExtResource( 5 )]
+
+position = Vector2( 448, 360 )
+
+[node name="WandHoch2" parent="Objekte" index="1" instance=ExtResource( 5 )]
+
+position = Vector2( 480, 384 )
+
+[node name="Player1" parent="Objekte" index="2" instance=ExtResource( 6 )]
+
+position = Vector2( 32, 192 )
+_sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
+isplayerone = true
+
+[node name="Player2" parent="Objekte" index="3" instance=ExtResource( 6 )]
+
+position = Vector2( 768, 552 )
+_sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
+isplayerone = null
+
+[node name="NPC" parent="Objekte" index="4" instance=ExtResource( 7 )]
+
+position = Vector2( 1312, 96 )
+
+[node name="Fabrikhalle" parent="Objekte" index="5" instance=ExtResource( 8 )]
+
+position = Vector2( 1600, -48 )
+
+[node name="Kiste" parent="Objekte" index="6" groups=[
+"Movable",
+] instance=ExtResource( 9 )]
+
+position = Vector2( 352, 672 )
+
+[node name="NPC_Dorf" parent="Objekte" index="7" instance=ExtResource( 10 )]
+
+position = Vector2( 896, -336 )
+
+[node name="Fabrikhalle2" parent="Objekte" index="8" instance=ExtResource( 11 )]
+
+position = Vector2( 32, -288 )
+
+[node name="Area2D" parent="Objekte" index="9" instance=ExtResource( 12 )]
+
+position = Vector2( 904, 256 )
+
+[node name="Timer" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 0.1
+one_shot = false
+autostart = true
+_sections_unfolded = [ "Pause" ]
+
+[node name="Viewport" type="Viewport" parent="." index="5"]
+
+arvr = false
+size = Vector2( 0, 0 )
+own_world = false
+world = null
+transparent_bg = false
+msaa = 0
+hdr = true
+disable_3d = false
+usage = 2
+debug_draw = 0
+render_target_v_flip = false
+render_target_clear_mode = 0
+render_target_update_mode = 2
+audio_listener_enable_2d = false
+audio_listener_enable_3d = false
+physics_object_picking = false
+gui_disable_input = false
+gui_snap_controls_to_pixels = true
+shadow_atlas_size = 0
+shadow_atlas_quad_0 = 2
+shadow_atlas_quad_1 = 2
+shadow_atlas_quad_2 = 3
+shadow_atlas_quad_3 = 4
+_sections_unfolded = [ "Rendering" ]
+
+[connection signal="timeout" from="Timer" to="BodenObjekte" method="_on_Timer_timeout"]
+
+

@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=15 format=2]
+[gd_resource type="TileSet" load_steps=16 format=2]
 
 [ext_resource path="res://Assets/Boden/Boden_Erde.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Boden/Boden_Erde2.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Assets/Boden/LochWandRechtsHinten.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Boden/LochWandLinksHinten.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Boden/LochAlles.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Boden/BodenDreck2.png" type="Texture" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -143,4 +144,13 @@ points = PoolVector2Array( 0, -24, 32, 0, 0, 24, -32, 0 )
 "shape": SubResource( 5 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 32, 24 )
 } ]
+9/name = "Boden5"
+9/texture = ExtResource( 10 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 0, 0, 64, 48 )
+9/is_autotile = false
+9/occluder_offset = Vector2( 32, 24 )
+9/navigation_offset = Vector2( 32, 24 )
+9/shapes = [  ]
 
