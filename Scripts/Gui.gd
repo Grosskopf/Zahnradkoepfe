@@ -15,6 +15,10 @@ func _ready():
 func _process(delta):
 	$Player1/ProgressBar.value=len(global.npcs[0])
 	$Player2/ProgressBar.value=len(global.npcs[1])
+	if ((len(global.npcs[0])==10 and get_tree().is_network_server())) or ((len(global.npcs[1])==10 and not get_tree().is_network_server())):
+		$VictoryScreen.visible=true
+	if ((len(global.npcs[1])==10 and get_tree().is_network_server())) or((len(global.npcs[0])==10 and not get_tree().is_network_server())):
+		$LooseScreen.visible=true
 	if(get_tree().is_network_server()):
 		$Resources/Label.text=str(int(global.resources[0]))
 		$Inventory/Cables.text=str(global.inventory[0][0])
