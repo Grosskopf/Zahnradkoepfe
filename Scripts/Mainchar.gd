@@ -100,7 +100,7 @@ func _process(delta):
 					holding=$RayRight.get_collider()
 					holding.held=true
 				elif($RayRight.is_colliding() and $RayRight.get_collider().get_name()=="Fabrikhalle"):
-					if get_tree().root.get_child(0).has_node("ShopWindow")!=null:
+					if get_tree().root.get_child(0).has_node("ShopWindow"):
 						get_tree().root.get_child(0).get_node("ShopWindow").visible=true
 				
 		if Input.is_action_pressed("cableadd"):
