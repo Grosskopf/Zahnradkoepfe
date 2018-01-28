@@ -33,7 +33,7 @@ slave func added_cable(posx,posy):
 slave func added_generator(posx,posy,playerrotat):
 	get_parent().get_parent().get_node("BodenObjekte").add_generator(posx,posy,playerrotat)
 slave func added_turm(posx,posy,playerrotat,player1):
-	get_parent().get_parent().get_node("BodenObjekte").add_generator(posx,posy,playerrotat,player1)
+	get_parent().get_parent().get_node("BodenObjekte").add_turm(posx,posy,playerrotat,player1)
 func _process(delta):
 	if (is_network_master()):
 		$Camera2D.current=true
