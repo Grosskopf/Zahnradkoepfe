@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://Assets/Objekte & Wände/Strassenlaterne1.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Objekte & Wände/StrassenlaterneKaputt1.png" type="Texture" id=2]
@@ -56,22 +56,23 @@
 [ext_resource path="res://Assets/Objekte & Wände/GeneratorFrame2.png" type="Texture" id=54]
 [ext_resource path="res://Assets/Objekte & Wände/GeneratorFrame3.png" type="Texture" id=55]
 [ext_resource path="res://Assets/Objekte & Wände/GeneratorFrame4.png" type="Texture" id=56]
-[ext_resource path="res://Assets/Objekte & Wände/AntennegGruenFrame1.png" type="Texture" id=57]
-[ext_resource path="res://Assets/Objekte & Wände/AntennegGruenFrame2.png" type="Texture" id=58]
-[ext_resource path="res://Assets/Objekte & Wände/AntennegGruenFrame3.png" type="Texture" id=59]
-[ext_resource path="res://Assets/Objekte & Wände/AntennegGruenFrame4.png" type="Texture" id=60]
-[ext_resource path="res://Assets/Objekte & Wände/AntenneRotFrame1.png" type="Texture" id=61]
-[ext_resource path="res://Assets/Objekte & Wände/AntenneRotFrame2.png" type="Texture" id=62]
-[ext_resource path="res://Assets/Objekte & Wände/AntenneRotFrame3.png" type="Texture" id=63]
-[ext_resource path="res://Assets/Objekte & Wände/AntenneRotFrame4.png" type="Texture" id=64]
-[ext_resource path="res://Assets/Objekte & Wände/AntenneInaktiv.png" type="Texture" id=65]
+[ext_resource path="res://Assets/Objekte & Wände/Fabrikschlot.png" type="Texture" id=57]
+[ext_resource path="res://Assets/Objekte & Wände/AntennegGruenFrame1.png" type="Texture" id=58]
+[ext_resource path="res://Assets/Objekte & Wände/AntennegGruenFrame2.png" type="Texture" id=59]
+[ext_resource path="res://Assets/Objekte & Wände/AntennegGruenFrame3.png" type="Texture" id=60]
+[ext_resource path="res://Assets/Objekte & Wände/AntennegGruenFrame4.png" type="Texture" id=61]
+[ext_resource path="res://Assets/Objekte & Wände/AntenneRotFrame1.png" type="Texture" id=62]
+[ext_resource path="res://Assets/Objekte & Wände/AntenneRotFrame2.png" type="Texture" id=63]
+[ext_resource path="res://Assets/Objekte & Wände/AntenneRotFrame3.png" type="Texture" id=64]
+[ext_resource path="res://Assets/Objekte & Wände/AntenneRotFrame4.png" type="Texture" id=65]
+[ext_resource path="res://Assets/Objekte & Wände/AntenneInaktiv.png" type="Texture" id=66]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 5.0
 
-[sub_resource type="CircleShape2D" id=11]
+[sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
 radius = 10.0
@@ -619,10 +620,33 @@ build_mode = 0
 polygon = PoolVector2Array( 0, 12, -32, -12, 0, -36, 32, -12 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Antenne1G" type="Sprite" parent="." index="56"]
+[node name="Schornstein" type="Sprite" parent="." index="56"]
+
+texture = ExtResource( 57 )
+offset = Vector2( 0, -116 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Schornstein" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Schornstein/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0, 12, -32, -12, 0, -36, 32, -12 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Antenne1G" type="Sprite" parent="." index="57"]
 
 editor/display_folded = true
-texture = ExtResource( 57 )
+texture = ExtResource( 58 )
 offset = Vector2( -64, -360 )
 _sections_unfolded = [ "Offset" ]
 
@@ -641,12 +665,12 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( -63.5, -186.5 )
 scale = Vector2( 1.26923, 1.26923 )
-shape = SubResource( 11 )
+shape = SubResource( 2 )
 
-[node name="Antenne2G" type="Sprite" parent="." index="57"]
+[node name="Antenne2G" type="Sprite" parent="." index="58"]
 
 editor/display_folded = true
-texture = ExtResource( 58 )
+texture = ExtResource( 59 )
 offset = Vector2( -64, -360 )
 _sections_unfolded = [ "Offset" ]
 
@@ -665,12 +689,12 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( -63.5, -186.5 )
 scale = Vector2( 1.26923, 1.26923 )
-shape = SubResource( 11 )
+shape = SubResource( 2 )
 
-[node name="Antenne3G" type="Sprite" parent="." index="58"]
+[node name="Antenne3G" type="Sprite" parent="." index="59"]
 
 editor/display_folded = true
-texture = ExtResource( 59 )
+texture = ExtResource( 60 )
 offset = Vector2( -64, -360 )
 _sections_unfolded = [ "Offset" ]
 
@@ -689,12 +713,12 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( -63.5, -186.5 )
 scale = Vector2( 1.26923, 1.26923 )
-shape = SubResource( 11 )
+shape = SubResource( 2 )
 
-[node name="Antenne4G" type="Sprite" parent="." index="59"]
+[node name="Antenne4G" type="Sprite" parent="." index="60"]
 
 editor/display_folded = true
-texture = ExtResource( 60 )
+texture = ExtResource( 61 )
 offset = Vector2( -64, -360 )
 _sections_unfolded = [ "Offset" ]
 
@@ -713,12 +737,12 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( -63.5, -186.5 )
 scale = Vector2( 1.26923, 1.26923 )
-shape = SubResource( 11 )
+shape = SubResource( 2 )
 
-[node name="Antenne1R" type="Sprite" parent="." index="60"]
+[node name="Antenne1R" type="Sprite" parent="." index="61"]
 
 editor/display_folded = true
-texture = ExtResource( 61 )
+texture = ExtResource( 62 )
 offset = Vector2( -64, -360 )
 _sections_unfolded = [ "Offset" ]
 
@@ -737,12 +761,12 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( -63.5, -186.5 )
 scale = Vector2( 1.26923, 1.26923 )
-shape = SubResource( 11 )
+shape = SubResource( 2 )
 
-[node name="Antenne2R" type="Sprite" parent="." index="61"]
+[node name="Antenne2R" type="Sprite" parent="." index="62"]
 
 editor/display_folded = true
-texture = ExtResource( 62 )
+texture = ExtResource( 63 )
 offset = Vector2( -64, -360 )
 _sections_unfolded = [ "Offset" ]
 
@@ -761,12 +785,12 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( -63.5, -186.5 )
 scale = Vector2( 1.26923, 1.26923 )
-shape = SubResource( 11 )
+shape = SubResource( 2 )
 
-[node name="Antenne3R" type="Sprite" parent="." index="62"]
+[node name="Antenne3R" type="Sprite" parent="." index="63"]
 
 editor/display_folded = true
-texture = ExtResource( 63 )
+texture = ExtResource( 64 )
 offset = Vector2( -64, -360 )
 _sections_unfolded = [ "Offset" ]
 
@@ -785,12 +809,12 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( -63.5, -186.5 )
 scale = Vector2( 1.26923, 1.26923 )
-shape = SubResource( 11 )
+shape = SubResource( 2 )
 
-[node name="Antenne4R" type="Sprite" parent="." index="63"]
+[node name="Antenne4R" type="Sprite" parent="." index="64"]
 
 editor/display_folded = true
-texture = ExtResource( 64 )
+texture = ExtResource( 65 )
 offset = Vector2( -64, -360 )
 _sections_unfolded = [ "Offset" ]
 
@@ -809,12 +833,12 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( -63.5, -186.5 )
 scale = Vector2( 1.26923, 1.26923 )
-shape = SubResource( 11 )
+shape = SubResource( 2 )
 
-[node name="Antenne" type="Sprite" parent="." index="64"]
+[node name="Antenne" type="Sprite" parent="." index="65"]
 
 editor/display_folded = true
-texture = ExtResource( 65 )
+texture = ExtResource( 66 )
 offset = Vector2( -64, -360 )
 _sections_unfolded = [ "Offset" ]
 
@@ -833,6 +857,6 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( -63.5, -186.5 )
 scale = Vector2( 1.26923, 1.26923 )
-shape = SubResource( 11 )
+shape = SubResource( 2 )
 
 
