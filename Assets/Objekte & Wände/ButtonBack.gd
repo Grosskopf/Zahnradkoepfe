@@ -29,6 +29,7 @@ func _on_Area2D_body_exited( body ):
 
 func _on_Timer_timeout():
 	if(self.name=="InfoButton"):
+		get_parent().get_node("Info").visible=true
 		pass
 	if(self.name=="QuitButton"):
 		get_tree().quit()
